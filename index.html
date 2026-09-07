@@ -436,6 +436,185 @@
             font-size: 0.9rem;
         }
 
+        /* Buscar Técnico por Presupuesto Section */
+        .buscar-tecnico {
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .filtro-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        .filtro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 1.2rem;
+            align-items: end;
+        }
+
+        .filtro-grid .btn-primary {
+            height: 50px;
+            white-space: nowrap;
+        }
+
+        .monto-input-wrapper {
+            position: relative;
+        }
+
+        .monto-input-wrapper span {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .monto-input-wrapper input {
+            padding-left: 2.6rem !important;
+        }
+
+        .resultados-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .resultados-header h3 {
+            color: var(--dark-blue);
+            font-size: 1.2rem;
+        }
+
+        .resultados-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: var(--light-blue);
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+        }
+
+        .tecnicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tecnico-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.6rem;
+            box-shadow: var(--shadow);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tecnico-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px rgba(0, 115, 230, 0.15);
+        }
+
+        .tecnico-top {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .tecnico-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .tecnico-info h4 {
+            color: var(--dark-blue);
+            font-size: 1.05rem;
+        }
+
+        .tecnico-servicio-tag {
+            font-size: 0.78rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .tecnico-detalles {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .tecnico-tarifa {
+            font-size: 0.95rem;
+            color: var(--text-dark);
+        }
+
+        .tecnico-tarifa strong {
+            color: var(--dark-blue);
+            font-size: 1.15rem;
+        }
+
+        .tecnico-card .btn-whatsapp {
+            justify-content: center;
+            padding: 0.7rem 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .sin-resultados {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--light-blue);
+            border-radius: var(--radius);
+            color: var(--text-muted);
+        }
+
+        .sin-resultados strong {
+            display: block;
+            color: var(--dark-blue);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .resultados-oculto {
+            display: none;
+        }
+
+        .demo-aviso {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 700px) {
+            .filtro-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Contact Section */
         .contact {
             padding: 5rem 2rem;
@@ -637,6 +816,7 @@
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#buscar-tecnico">Buscar Técnico</a></li>
                     <li><a href="#nosotros">Por qué elegirnos</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
@@ -715,6 +895,48 @@
                     <a href="#contacto" class="btn-primary">Cotizar Electricidad</a>
                 </div>
             </div>
+        </section>
+
+        <!-- Buscar Técnico por Presupuesto Section -->
+        <section class="buscar-tecnico" id="buscar-tecnico">
+            <div class="section-title">
+                <h2>Busca un Técnico según tu Presupuesto</h2>
+                <p>Elige el servicio, indica cuánto estás dispuesto a pagar y te mostramos los técnicos que aceptan ese monto</p>
+            </div>
+
+            <div class="filtro-card">
+                <form id="filtro-form">
+                    <div class="filtro-grid">
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="filtro-servicio">Tipo de falla / servicio</label>
+                            <select id="filtro-servicio" name="filtro-servicio" required>
+                                <option value="">Selecciona un servicio</option>
+                                <option value="Plomería">Plomería</option>
+                                <option value="Electricidad">Electricidad</option>
+                                <option value="Aire Acondicionado">Aire Acondicionado</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-bottom:0;">
+                            <label for="filtro-monto">¿Cuánto estás dispuesto a pagar?</label>
+                            <div class="monto-input-wrapper">
+                                <span>Bs</span>
+                                <input type="number" id="filtro-monto" name="filtro-monto" placeholder="Ej: 150" min="1" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">🔍 Buscar Técnicos</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="resultados-wrapper" class="resultados-oculto">
+                <div class="resultados-header">
+                    <h3 id="resultados-titulo">Resultados</h3>
+                    <span class="resultados-count" id="resultados-count">0 técnicos</span>
+                </div>
+                <div class="tecnicos-grid" id="tecnicos-grid"></div>
+            </div>
+
+            <p class="demo-aviso">* Lista de técnicos de referencia. Para gestionar técnicos reales, contáctanos para integrarlos a tu cuenta.</p>
         </section>
 
         <!-- Features Section -->
@@ -839,6 +1061,88 @@
             var url = 'https://wa.me/59170000000?text=' + encodeURIComponent(texto);
             window.open(url, '_blank', 'noopener');
         });
+
+        // ===== Buscar Técnico por Presupuesto =====
+        (function () {
+            // Lista de técnicos de referencia (hipotética).
+            // Cada técnico tiene una tarifa mínima que acepta cobrar por su servicio.
+            var TECNICOS = [
+                { nombre: 'Marcelo Rivero',   servicio: 'Plomería',          tarifaMin: 80,  telefono: '59170111222', experiencia: '6 años de experiencia' },
+                { nombre: 'Julio Cárdenas',   servicio: 'Plomería',          tarifaMin: 120, telefono: '59170222333', experiencia: '10 años de experiencia' },
+                { nombre: 'Fabiana Ortiz',    servicio: 'Plomería',          tarifaMin: 150, telefono: '59170333444', experiencia: 'Especialista en calefones' },
+                { nombre: 'Ronald Suárez',    servicio: 'Electricidad',      tarifaMin: 100, telefono: '59170444555', experiencia: '8 años de experiencia' },
+                { nombre: 'Deysi Flores',     servicio: 'Electricidad',      tarifaMin: 130, telefono: '59170555666', experiencia: 'Instalaciones certificadas' },
+                { nombre: 'Édgar Montaño',    servicio: 'Electricidad',      tarifaMin: 180, telefono: '59170666777', experiencia: 'Tableros y media tensión' },
+                { nombre: 'Wilson Paz',       servicio: 'Aire Acondicionado',tarifaMin: 150, telefono: '59170777888', experiencia: 'Técnico Split y Central' },
+                { nombre: 'Carla Mendoza',    servicio: 'Aire Acondicionado',tarifaMin: 200, telefono: '59170888999', experiencia: 'Recarga de gas y fugas' },
+                { nombre: 'Hugo Vásquez',     servicio: 'Aire Acondicionado',tarifaMin: 250, telefono: '59170999000', experiencia: '12 años de experiencia' }
+            ];
+
+            var form = document.getElementById('filtro-form');
+            var wrapper = document.getElementById('resultados-wrapper');
+            var grid = document.getElementById('tecnicos-grid');
+            var titulo = document.getElementById('resultados-titulo');
+            var count = document.getElementById('resultados-count');
+
+            function iniciales(nombre) {
+                return nombre.split(' ').map(function (p) { return p[0]; }).slice(0, 2).join('').toUpperCase();
+            }
+
+            function crearTarjeta(tec) {
+                var card = document.createElement('div');
+                card.className = 'tecnico-card';
+
+                var mensaje = 'Hola ' + tec.nombre + ', te contacto desde Técnico SCZ. ' +
+                    'Necesito el servicio de ' + tec.servicio + ' y vi que aceptas trabajos desde Bs ' + tec.tarifaMin + '. ¿Podemos coordinar?';
+                var linkWa = 'https://wa.me/' + tec.telefono + '?text=' + encodeURIComponent(mensaje);
+
+                card.innerHTML =
+                    '<div class="tecnico-top">' +
+                        '<div class="tecnico-avatar">' + iniciales(tec.nombre) + '</div>' +
+                        '<div class="tecnico-info">' +
+                            '<h4>' + tec.nombre + '</h4>' +
+                            '<span class="tecnico-servicio-tag">' + tec.servicio + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="tecnico-detalles">' +
+                        '<span>' + tec.experiencia + '</span>' +
+                    '</div>' +
+                    '<div class="tecnico-tarifa">Acepta trabajos desde <strong>Bs ' + tec.tarifaMin + '</strong></div>' +
+                    '<a href="' + linkWa + '" target="_blank" rel="noopener" class="btn-whatsapp">📱 Contactar por WhatsApp</a>';
+
+                return card;
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                var servicio = document.getElementById('filtro-servicio').value;
+                var monto = parseFloat(document.getElementById('filtro-monto').value);
+
+                var coincidencias = TECNICOS
+                    .filter(function (t) { return t.servicio === servicio && t.tarifaMin <= monto; })
+                    .sort(function (a, b) { return b.tarifaMin - a.tarifaMin; }); // el más cercano a tu presupuesto primero
+
+                wrapper.classList.remove('resultados-oculto');
+                grid.innerHTML = '';
+                titulo.textContent = 'Técnicos de ' + servicio + ' que aceptan Bs ' + monto;
+                count.textContent = coincidencias.length + (coincidencias.length === 1 ? ' técnico' : ' técnicos');
+
+                if (coincidencias.length === 0) {
+                    grid.innerHTML =
+                        '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
+                            '<strong>No encontramos técnicos para ese monto</strong>' +
+                            'Prueba con un monto un poco más alto o contáctanos directo por WhatsApp y te ayudamos a coordinar.' +
+                        '</div>';
+                } else {
+                    coincidencias.forEach(function (tec) {
+                        grid.appendChild(crearTarjeta(tec));
+                    });
+                }
+
+                wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        })();
     </script>
 
 </body>
