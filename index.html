@@ -250,53 +250,19 @@
             </div>
         </section>
 
-        <!-- Servicios -->
+        <!-- Servicios (DINÁMICOS desde Google Sheets) -->
         <section class="services" id="servicios">
             <div class="section-title">
                 <h2>Nuestros Servicios Especializados</h2>
                 <p>Atención integral para tu hogar, oficina o negocio con técnicos capacitados</p>
             </div>
 
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">❄️</div>
-                    <h3>Aire Acondicionado</h3>
-                    <ul class="service-list">
-                        <li>Instalación de equipos Split y Centrales</li>
-                        <li>Mantenimiento preventivo y limpieza profunda</li>
-                        <li>Reparación de fugas de gas y recarga de refrigerante</li>
-                        <li>Diagnóstico y reparación de fallas eléctricas/mecánicas</li>
-                    </ul>
-                    <a href="#contacto" class="btn-primary">Cotizar Aire Acondicionado</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">🔧</div>
-                    <h3>Plomería Integral</h3>
-                    <ul class="service-list">
-                        <li>Reparación de fugas de agua y filtraciones</li>
-                        <li>Destape de cañerías, desagües y sanitarios</li>
-                        <li>Instalación de grifería, duchas y bombas de agua</li>
-                        <li>Mantenimiento e instalación de calefones / termotanques</li>
-                    </ul>
-                    <a href="#contacto" class="btn-primary">Cotizar Plomería</a>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon" aria-hidden="true">⚡</div>
-                    <h3>Electricidad</h3>
-                    <ul class="service-list">
-                        <li>Instalaciones eléctricas residenciales y comerciales</li>
-                        <li>Tableros eléctricos, térmicas y protecciones</li>
-                        <li>Instalación de puntos de luz, tomacorrientes y luminarias</li>
-                        <li>Adecuaciones eléctricas para equipos de Aire Acondicionado</li>
-                    </ul>
-                    <a href="#contacto" class="btn-primary">Cotizar Electricidad</a>
-                </div>
+            <div class="services-grid" id="servicios-grid">
+                <div class="sin-resultados" style="grid-column: 1 / -1;">Cargando servicios...</div>
             </div>
         </section>
 
-        <!-- Buscar Técnico -->
+        <!-- Buscar Técnico (DINÁMICO desde Google Sheets) -->
         <section class="buscar-tecnico" id="buscar-tecnico">
             <div class="section-title">
                 <h2>Busca un Técnico según tu Presupuesto</h2>
@@ -335,7 +301,7 @@
                 <div class="tecnicos-grid" id="tecnicos-grid"></div>
             </div>
 
-            <p class="demo-aviso">* Lista de técnicos de referencia. Para gestionar técnicos reales, contáctanos para integrarlos a tu cuenta.</p>
+            <p class="demo-aviso">* Lista de técnicos cargada dinámicamente desde nuestra base de datos.</p>
         </section>
 
         <!-- Features -->
@@ -420,10 +386,10 @@
     </a>
 
     <script>
-        // ====== URL de tu Google Apps Script (ya configurada) ======
+        // ====== URL de tu Google Apps Script ======
         var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyk06NtQ6qVFmWZKZUY0o8uTXjxxYoFnu3gzX3fsUzbxjcHTN65CB821q8AUmIl15qDg/exec';
 
-        // Menú móvil
+        // ====== Menú móvil ======
         (function () {
             var toggle = document.getElementById('menu-toggle');
             var nav = document.getElementById('nav-links');
@@ -445,10 +411,10 @@
             });
         })();
 
-        // Año dinámico en el footer
+        // ====== Año dinámico en el footer ======
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ===== Utilidad para enviar datos a Google Sheets =====
+        // ====== Utilidad para enviar datos a Google Sheets ======
         function enviarAGSheet(datos, callback) {
             fetch(SCRIPT_URL, {
                 method: 'POST',
@@ -467,7 +433,7 @@
             });
         }
 
-        // Formulario de contacto -> Google Sheets + WhatsApp
+        // ====== Formulario de contacto -> Google Sheets + WhatsApp ======
         document.getElementById('contact-form').addEventListener('submit', function (e) {
             e.preventDefault();
             var nombre = document.getElementById('nombre').value.trim();
@@ -498,20 +464,73 @@
             });
         });
 
-        // ===== Buscar Técnico por Presupuesto =====
-        (function () {
-            var TECNICOS = [
-                { nombre: 'Marcelo Rivero',   servicio: 'Plomería',          tarifaMin: 80,  telefono: '59170111222', experiencia: '6 años de experiencia' },
-                { nombre: 'Julio Cárdenas',   servicio: 'Plomería',          tarifaMin: 120, telefono: '59170222333', experiencia: '10 años de experiencia' },
-                { nombre: 'Fabiana Ortiz',    servicio: 'Plomería',          tarifaMin: 150, telefono: '59170333444', experiencia: 'Especialista en calefones' },
-                { nombre: 'Ronald Suárez',    servicio: 'Electricidad',      tarifaMin: 100, telefono: '59170444555', experiencia: '8 años de experiencia' },
-                { nombre: 'Deysi Flores',     servicio: 'Electricidad',      tarifaMin: 130, telefono: '59170555666', experiencia: 'Instalaciones certificadas' },
-                { nombre: 'Édgar Montaño',    servicio: 'Electricidad',      tarifaMin: 180, telefono: '59170666777', experiencia: 'Tableros y media tensión' },
-                { nombre: 'Wilson Paz',       servicio: 'Aire Acondicionado',tarifaMin: 150, telefono: '59170777888', experiencia: 'Técnico Split y Central' },
-                { nombre: 'Carla Mendoza',    servicio: 'Aire Acondicionado',tarifaMin: 200, telefono: '59170888999', experiencia: 'Recarga de gas y fugas' },
-                { nombre: 'Hugo Vásquez',     servicio: 'Aire Acondicionado',tarifaMin: 250, telefono: '59170999000', experiencia: '12 años de experiencia' }
-            ];
+        // ====================================================================
+        // ====== CARGAR SERVICIOS Y TÉCNICOS DESDE GOOGLE SHEETS ===========
+        // ====================================================================
+        var DATOS_GSHEET = { servicios: [], tecnicos: [] };
 
+        function cargarDatosDesdeGSheet() {
+            return fetch(SCRIPT_URL)
+                .then(function (resp) { return resp.json(); })
+                .then(function (data) {
+                    if (data.result === 'success') {
+                        DATOS_GSHEET.servicios = data.servicios || [];
+                        DATOS_GSHEET.tecnicos = data.tecnicos || [];
+                    }
+                    return DATOS_GSHEET;
+                })
+                .catch(function (err) {
+                    console.error('Error cargando datos:', err);
+                    return DATOS_GSHEET;
+                });
+        }
+
+        // ====== Renderizar SERVICIOS ======
+        function renderServicios() {
+            var grid = document.getElementById('servicios-grid');
+            if (!grid) return;
+
+            grid.innerHTML = '';
+            var servicios = DATOS_GSHEET.servicios;
+
+            if (!servicios || servicios.length === 0) {
+                grid.innerHTML =
+                    '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
+                        '<strong>No hay servicios cargados</strong>' +
+                        'Agrega servicios en tu hoja "Servicios".' +
+                    '</div>';
+                return;
+            }
+
+            servicios.forEach(function (s) {
+                var icono = s.icono || '🛠️';
+                var titulo = s.titulo || 'Servicio';
+                var descripcion = (s.descripcion || '').toString().trim();
+                var items = (s.items || '').toString().split('|')
+                    .map(function (i) { return i.trim(); })
+                    .filter(function (i) { return i !== ''; });
+                var boton = s.boton || ('Cotizar ' + titulo);
+
+                var card = document.createElement('div');
+                card.className = 'service-card';
+
+                var itemsHTML = items.map(function (item) {
+                    return '<li>' + item + '</li>';
+                }).join('');
+
+                card.innerHTML =
+                    '<div class="service-icon" aria-hidden="true">' + icono + '</div>' +
+                    '<h3>' + titulo + '</h3>' +
+                    (descripcion ? '<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">' + descripcion + '</p>' : '') +
+                    '<ul class="service-list">' + itemsHTML + '</ul>' +
+                    '<a href="#contacto" class="btn-primary">' + boton + '</a>';
+
+                grid.appendChild(card);
+            });
+        }
+
+        // ====== Buscar Técnico por Presupuesto ======
+        (function () {
             var form = document.getElementById('filtro-form');
             var wrapper = document.getElementById('resultados-wrapper');
             var grid = document.getElementById('tecnicos-grid');
@@ -519,7 +538,9 @@
             var count = document.getElementById('resultados-count');
 
             function iniciales(nombre) {
-                return nombre.split(' ').map(function (p) { return p[0]; }).slice(0, 2).join('').toUpperCase();
+                return String(nombre).split(' ')
+                    .map(function (p) { return p[0]; })
+                    .slice(0, 2).join('').toUpperCase();
             }
 
             function crearTarjeta(tec) {
@@ -539,7 +560,7 @@
                         '</div>' +
                     '</div>' +
                     '<div class="tecnico-detalles">' +
-                        '<span>' + tec.experiencia + '</span>' +
+                        '<span>' + (tec.experiencia || '') + '</span>' +
                     '</div>' +
                     '<div class="tecnico-tarifa">Acepta trabajos desde <strong>Bs ' + tec.tarifaMin + '</strong></div>' +
                     '<a href="' + linkWa + '" target="_blank" rel="noopener" class="btn-whatsapp">📱 Contactar por WhatsApp</a>';
@@ -553,39 +574,77 @@
                 var servicio = document.getElementById('filtro-servicio').value;
                 var monto = parseFloat(document.getElementById('filtro-monto').value);
 
-                var coincidencias = TECNICOS
-                    .filter(function (t) { return t.servicio === servicio && t.tarifaMin <= monto; })
-                    .sort(function (a, b) { return b.tarifaMin - a.tarifaMin; });
-
                 wrapper.classList.remove('resultados-oculto');
-                grid.innerHTML = '';
-                titulo.textContent = 'Técnicos de ' + servicio + ' que aceptan Bs ' + monto;
-                count.textContent = coincidencias.length + (coincidencias.length === 1 ? ' técnico' : ' técnicos');
+                grid.innerHTML = '<div class="sin-resultados" style="grid-column: 1 / -1;">Cargando técnicos...</div>';
+                titulo.textContent = 'Buscando...';
+                count.textContent = '';
 
-                if (coincidencias.length === 0) {
+                // Asegurarnos de tener los técnicos cargados
+                var promesa = DATOS_GSHEET.tecnicos.length > 0
+                    ? Promise.resolve(DATOS_GSHEET)
+                    : cargarDatosDesdeGSheet();
+
+                promesa.then(function (data) {
+                    var tecnicos = (data.tecnicos || [])
+                        .filter(function (t) {
+                            return String(t.activo || 'SI').trim().toUpperCase() === 'SI';
+                        })
+                        .map(function (t) {
+                            return {
+                                nombre: String(t.nombre || '').trim(),
+                                servicio: String(t.servicio || '').trim(),
+                                tarifaMin: parseFloat(t.tarifamin) || 0,
+                                telefono: String(t.telefono || '').trim(),
+                                experiencia: String(t.experiencia || '').trim()
+                            };
+                        });
+
+                    var coincidencias = tecnicos
+                        .filter(function (t) { return t.servicio === servicio && t.tarifaMin <= monto; })
+                        .sort(function (a, b) { return b.tarifaMin - a.tarifaMin; });
+
+                    grid.innerHTML = '';
+                    titulo.textContent = 'Técnicos de ' + servicio + ' que aceptan Bs ' + monto;
+                    count.textContent = coincidencias.length + (coincidencias.length === 1 ? ' técnico' : ' técnicos');
+
+                    if (coincidencias.length === 0) {
+                        grid.innerHTML =
+                            '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
+                                '<strong>No encontramos técnicos para ese monto</strong>' +
+                                'Prueba con un monto un poco más alto o contáctanos directo por WhatsApp y te ayudamos a coordinar.' +
+                            '</div>';
+                    } else {
+                        coincidencias.forEach(function (tec) {
+                            grid.appendChild(crearTarjeta(tec));
+                        });
+                    }
+
+                    // Registrar la búsqueda en Google Sheets
+                    var datosBusqueda = {
+                        tipo: 'busqueda_tecnico',
+                        servicio: servicio,
+                        mensaje: 'Presupuesto: Bs ' + monto + ' | Resultados: ' + coincidencias.length,
+                        fecha: new Date().toISOString()
+                    };
+                    enviarAGSheet(datosBusqueda, function () {});
+
+                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }).catch(function (err) {
+                    console.error('Error cargando técnicos:', err);
                     grid.innerHTML =
                         '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
-                            '<strong>No encontramos técnicos para ese monto</strong>' +
-                            'Prueba con un monto un poco más alto o contáctanos directo por WhatsApp y te ayudamos a coordinar.' +
+                            '<strong>Error al cargar los técnicos</strong>' +
+                            'Recarga la página o contáctanos directo por WhatsApp.' +
                         '</div>';
-                } else {
-                    coincidencias.forEach(function (tec) {
-                        grid.appendChild(crearTarjeta(tec));
-                    });
-                }
-
-                // Registrar la búsqueda en Google Sheets
-                var datosBusqueda = {
-                    tipo: 'busqueda_tecnico',
-                    servicio: servicio,
-                    mensaje: 'Presupuesto: Bs ' + monto + ' | Resultados: ' + coincidencias.length,
-                    fecha: new Date().toISOString()
-                };
-                enviarAGSheet(datosBusqueda, function () {});
-
-                wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    titulo.textContent = 'Error';
+                });
             });
         })();
+
+        // ====== Inicializar: cargar todo al abrir la página ======
+        cargarDatosDesdeGSheet().then(function () {
+            renderServicios();
+        });
     </script>
 
 </body>
