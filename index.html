@@ -340,20 +340,45 @@
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
 
-        .categoria-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.4rem; }
-        .chip {
-            background: rgba(255,255,255,0.04); border: 1px solid var(--line-soft);
-            color: var(--text); padding: 0.4rem 1rem 0.4rem 0.4rem;
-            border-radius: 999px; font-size: 0.9rem; font-weight: 500;
-            cursor: pointer; transition: all 0.25s ease;
-            font-family: inherit; display: inline-flex; align-items: center; gap: 8px;
+        /* Selección múltiple de categorías */
+        .categoria-multi {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.7rem; margin-top: 0.5rem;
         }
-        .chip img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
-        .chip:hover { border-color: var(--neon-dark); color: var(--neon); }
-        .chip.active {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-dark) 100%);
-            border-color: var(--neon-dark); color: #fff;
+        .cat-option {
+            display: flex; align-items: center; gap: 0.65rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--line-soft); border-radius: 12px;
+            padding: 0.6rem 0.8rem; cursor: pointer;
+            font-size: 0.92rem; font-weight: 500; color: var(--text);
+            transition: border-color 0.2s ease, background 0.2s ease;
         }
+        .cat-option:hover { border-color: var(--neon-dark); }
+        .cat-option.active { border-color: var(--neon); background: rgba(0,224,140,0.12); }
+        .cat-option input[type="checkbox"] {
+            width: 18px; height: 18px; accent-color: var(--neon-dark);
+            flex-shrink: 0; cursor: pointer;
+        }
+        .cat-option img { width: 34px; height: 34px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+        .items-cat-title {
+            color: var(--neon); font-size: 0.85rem; font-weight: 600;
+            margin: 0.9rem 0 0.2rem; padding-bottom: 0.3rem;
+            border-bottom: 1px solid var(--line);
+        }
+        .items-cat-title:first-child { margin-top: 0; }
+
+        /* Barra lateral ocultable */
+        .rail-head { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding: 0 0.3rem 0.6rem; }
+        .rail-hide {
+            background: none; border: 1px solid var(--line-soft); color: var(--text-muted);
+            width: 30px; height: 30px; border-radius: 8px; cursor: pointer;
+            font-size: 1rem; line-height: 1; flex-shrink: 0;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .rail-hide:hover { color: var(--neon); border-color: var(--neon-dark); }
+        html.rail-hidden .rail:not(.is-open) { transform: translateX(-100%); }
+        html.rail-hidden .page-shift { padding-left: 0; }
+        html.rail-hidden .rail-toggle { display: flex; align-items: center; justify-content: center; }
 
         .items-container { background: rgba(255,255,255,0.03); border: 1px solid var(--line-soft); padding: 1.1rem; border-radius: 12px; margin-top: 0.4rem; }
         .item-checkbox {
@@ -448,7 +473,10 @@
 
     <!-- ============ BARRA LATERAL IZQUIERDA (CATEGORÍAS) ============ -->
     <aside class="rail" id="rail" aria-label="Categorías de servicio">
-        <div class="rail-title">Nuestros servicios</div>
+        <div class="rail-head">
+            <span class="rail-title" style="padding: 0;">Nuestros servicios</span>
+            <button class="rail-hide" id="rail-hide" type="button" aria-label="Ocultar barra lateral" title="Ocultar">«</button>
+        </div>
         <div class="rail-list" id="rail-list">
             <div class="rail-loading">Cargando categorías...</div>
         </div>
@@ -543,8 +571,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label>¿Qué servicio necesitas? *</label>
-                            <div class="categoria-chips" id="categoria-chips">
+                            <label>¿Qué servicios necesitas? * <span style="color: var(--text-muted); font-weight: 400;">(puedes marcar más de uno)</span></label>
+                            <div class="categoria-multi" id="categoria-multi">
                                 <div class="loading-text" style="padding: 0.5rem;">Cargando...</div>
                             </div>
                         </div>
@@ -635,8 +663,17 @@
         // 🖼️ Carpeta de imágenes del repositorio
         var IMG_BASE = 'https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/imagenes/';
 
+        // Algunas imágenes están en la raíz del repo, no dentro de /imagenes
+        var ROOT_BASE = 'https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/';
+
         // Imagen del hero: se prueban en orden hasta que una cargue
-        var HERO_CANDIDATOS = ['hero.jpg', 'banner.jpg', 'hero.png', 'banner.png', 'portada.jpg'];
+        var HERO_CANDIDATOS = [
+            IMG_BASE + 'principal hero.jpg',
+            IMG_BASE + 'principal-hero.jpg',
+            ROOT_BASE + 'principal hero.jpg',
+            IMG_BASE + 'hero.jpg',
+            IMG_BASE + 'banner.jpg'
+        ];
 
         // Extensiones que se prueban para cada categoría
         var EXTENSIONES = ['.jpg', '.jpeg', '.png', '.webp'];
@@ -674,7 +711,7 @@
             servicios: [],
             tecnicos: [],
             categorias: [],
-            categoriaSeleccionada: null
+            categoriasSeleccionadas: []
         };
 
         // ====================================================================
@@ -714,13 +751,23 @@
                     }
                 }
             }
+            // Nombre tal cual viene de la hoja (con espacios) y su versión sin tildes
+            var crudo = String(categoria || '').trim();
+            var sinTildes = normalizar(crudo);
+            [crudo, sinTildes].forEach(function (v) {
+                if (v && bases.indexOf(v) === -1) bases.unshift(v);
+            });
+
             var s = slug(categoria);
             if (s && bases.indexOf(s) === -1) bases.push(s);
             bases.push('servicio-generico');
 
             var urls = [];
             bases.forEach(function (b) {
-                EXTENSIONES.forEach(function (ext) { urls.push(IMG_BASE + b + ext); });
+                EXTENSIONES.forEach(function (ext) {
+                    urls.push(encodeURI(IMG_BASE + b + ext));
+                    urls.push(encodeURI(ROOT_BASE + b + ext));
+                });
             });
             return urls;
         }
@@ -746,13 +793,13 @@
             img.addEventListener('error', function () {
                 idx++;
                 if (idx < HERO_CANDIDATOS.length) {
-                    img.src = IMG_BASE + HERO_CANDIDATOS[idx];
+                    img.src = encodeURI(HERO_CANDIDATOS[idx]);
                 } else {
                     img.style.display = 'none';
                     document.querySelector('.hero-img-wrap').style.minHeight = '260px';
                 }
             });
-            img.src = IMG_BASE + HERO_CANDIDATOS[0];
+            img.src = encodeURI(HERO_CANDIDATOS[0]);
         }
 
         // ====================================================================
@@ -803,7 +850,12 @@
                 if (String(t.activo || 'SI').toUpperCase() !== 'SI') return;
                 var c = String(t.servicio || '').trim();
                 if (!c) return;
-                var existe = lista.some(function (l) { return normalizar(l) === normalizar(c); });
+                // Evita duplicados tipo "Plomería" vs "Plomería Integral"
+                var nc = normalizar(c);
+                var existe = lista.some(function (l) {
+                    var nl = normalizar(l);
+                    return nl === nc || nl.indexOf(nc) !== -1 || nc.indexOf(nl) !== -1;
+                });
                 if (!existe) lista.push(c);
             });
             DATOS.categorias = lista;
@@ -854,18 +906,39 @@
             });
         }
 
-        function marcarRail(categoria) {
+        function marcarRail() {
             document.querySelectorAll('#rail-list .rail-btn').forEach(function (b) {
-                b.classList.toggle('active', b.getAttribute('data-categoria') === categoria);
+                b.classList.toggle('active', estaSeleccionada(b.getAttribute('data-categoria')));
             });
         }
+
+        // Estado guardado de la barra lateral (se recuerda en el navegador)
+        (function () {
+            try {
+                if (localStorage.getItem('railOculta') === '1') {
+                    document.documentElement.classList.add('rail-hidden');
+                }
+            } catch (e) { /* navegador sin almacenamiento */ }
+        })();
 
         (function () {
             var rail = document.getElementById('rail');
             var backdrop = document.getElementById('rail-backdrop');
             var toggle = document.getElementById('rail-toggle');
+            var hide = document.getElementById('rail-hide');
+
+            hide.addEventListener('click', function () {
+                document.documentElement.classList.add('rail-hidden');
+                cerrarRail();
+                try { localStorage.setItem('railOculta', '1'); } catch (e) {}
+            });
 
             toggle.addEventListener('click', function () {
+                if (window.innerWidth > 1100) {
+                    document.documentElement.classList.remove('rail-hidden');
+                    try { localStorage.setItem('railOculta', '0'); } catch (e) {}
+                    return;
+                }
                 rail.classList.add('is-open');
                 backdrop.classList.add('is-open');
             });
@@ -1045,8 +1118,14 @@
         // ====================================================================
         // ============ FORMULARIO ==========================================
         // ====================================================================
-        function renderCategoriaChips() {
-            var cont = document.getElementById('categoria-chips');
+        function estaSeleccionada(cat) {
+            return DATOS.categoriasSeleccionadas.some(function (c) {
+                return normalizar(c) === normalizar(cat);
+            });
+        }
+
+        function renderCategoriaMulti() {
+            var cont = document.getElementById('categoria-multi');
             cont.innerHTML = '';
 
             if (!DATOS.categorias.length) {
@@ -1055,10 +1134,13 @@
             }
 
             DATOS.categorias.forEach(function (cat) {
-                var chip = document.createElement('button');
-                chip.type = 'button';
-                chip.className = 'chip';
-                chip.setAttribute('data-categoria', cat);
+                var label = document.createElement('label');
+                label.className = 'cat-option';
+                label.setAttribute('data-categoria', cat);
+
+                var chk = document.createElement('input');
+                chk.type = 'checkbox';
+                chk.value = cat;
 
                 var img = document.createElement('img');
                 img.alt = cat;
@@ -1068,70 +1150,117 @@
                 var span = document.createElement('span');
                 span.textContent = cat;
 
-                chip.appendChild(img);
-                chip.appendChild(span);
-                chip.addEventListener('click', function () { seleccionarCategoria(cat); });
-                cont.appendChild(chip);
+                label.appendChild(chk);
+                label.appendChild(img);
+                label.appendChild(span);
+
+                chk.addEventListener('change', function () {
+                    alternarCategoria(cat, chk.checked);
+                });
+
+                cont.appendChild(label);
             });
         }
 
+        function alternarCategoria(categoria, activa) {
+            var idx = -1;
+            DATOS.categoriasSeleccionadas.forEach(function (c, i) {
+                if (normalizar(c) === normalizar(categoria)) idx = i;
+            });
+            if (activa && idx === -1) DATOS.categoriasSeleccionadas.push(categoria);
+            if (!activa && idx !== -1) DATOS.categoriasSeleccionadas.splice(idx, 1);
+            sincronizarSeleccion();
+        }
+
+        // Usada por el rail y por las tarjetas: agrega la categoría a la selección
         function seleccionarCategoria(categoria) {
-            DATOS.categoriaSeleccionada = categoria;
+            if (!estaSeleccionada(categoria)) DATOS.categoriasSeleccionadas.push(categoria);
+            sincronizarSeleccion();
+        }
 
-            document.querySelectorAll('#categoria-chips .chip').forEach(function (c) {
-                c.classList.toggle('active', normalizar(c.getAttribute('data-categoria')) === normalizar(categoria));
+        function sincronizarSeleccion() {
+            document.querySelectorAll('#categoria-multi .cat-option').forEach(function (l) {
+                var activa = estaSeleccionada(l.getAttribute('data-categoria'));
+                l.classList.toggle('active', activa);
+                l.querySelector('input').checked = activa;
             });
-            marcarRail(categoria);
+            marcarRail();
+            renderItems();
+            actualizarSelectTecnicos();
+        }
 
-            var servicio = DATOS.servicios.find(function (s) {
-                return normalizar(s.titulo) === normalizar(categoria);
-            });
-
-            var itemsCont = document.getElementById('items-container');
+        function renderItems() {
             var itemsGroup = document.getElementById('items-group');
-            itemsGroup.style.display = 'block';
+            var itemsCont = document.getElementById('items-container');
+            var otroGroup = document.getElementById('otro-group');
             itemsCont.innerHTML = '';
 
-            if (servicio && servicio.items) {
-                String(servicio.items).split('|')
-                    .map(function (i) { return i.trim(); })
-                    .filter(function (i) { return i !== ''; })
-                    .forEach(function (item) {
-                        var label = document.createElement('label');
-                        label.className = 'item-checkbox';
-                        label.innerHTML =
-                            '<input type="checkbox" value="' + item.replace(/"/g, '&quot;') + '">' +
-                            '<span>' + item + '</span>';
-                        itemsCont.appendChild(label);
-                    });
-            } else {
-                itemsCont.innerHTML = '<div class="items-placeholder">Describe el trabajo en el campo de abajo</div>';
+            if (!DATOS.categoriasSeleccionadas.length) {
+                itemsGroup.style.display = 'none';
+                otroGroup.classList.remove('visible');
+                return;
             }
+            itemsGroup.style.display = 'block';
+
+            DATOS.categoriasSeleccionadas.forEach(function (cat) {
+                var titulo = document.createElement('div');
+                titulo.className = 'items-cat-title';
+                titulo.textContent = cat;
+                itemsCont.appendChild(titulo);
+
+                var servicio = DATOS.servicios.find(function (s) {
+                    return normalizar(s.titulo) === normalizar(cat);
+                });
+                var items = servicio && servicio.items
+                    ? String(servicio.items).split('|').map(function (i) { return i.trim(); }).filter(Boolean)
+                    : [];
+
+                if (!items.length) {
+                    var ph = document.createElement('div');
+                    ph.className = 'items-placeholder';
+                    ph.textContent = 'Describe el trabajo en el campo "Otro"';
+                    itemsCont.appendChild(ph);
+                    return;
+                }
+
+                items.forEach(function (item) {
+                    var label = document.createElement('label');
+                    label.className = 'item-checkbox';
+                    label.innerHTML =
+                        '<input type="checkbox" data-categoria="' + cat.replace(/"/g, '&quot;') + '" ' +
+                        'value="' + item.replace(/"/g, '&quot;') + '">' +
+                        '<span>' + item + '</span>';
+                    itemsCont.appendChild(label);
+                });
+            });
 
             var labelOtro = document.createElement('label');
             labelOtro.className = 'item-checkbox';
+            labelOtro.style.marginTop = '0.8rem';
             labelOtro.innerHTML =
                 '<input type="checkbox" id="check-otro" value="__OTRO__">' +
                 '<span>Otro (especificar abajo)</span>';
             itemsCont.appendChild(labelOtro);
 
             var checkOtro = labelOtro.querySelector('#check-otro');
-            var otroGroup = document.getElementById('otro-group');
             otroGroup.classList.remove('visible');
             checkOtro.addEventListener('change', function () {
                 otroGroup.classList.toggle('visible', checkOtro.checked);
             });
-
-            actualizarSelectTecnicos(categoria);
         }
 
-        function actualizarSelectTecnicos(categoria) {
+        function actualizarSelectTecnicos() {
             var select = document.getElementById('sol-tecnico');
             select.innerHTML = '<option value="Cualquiera disponible">Cualquiera disponible</option>';
 
             DATOS.tecnicos.filter(function (t) {
-                return String(t.activo || 'SI').toUpperCase() === 'SI' &&
-                       normalizar(t.servicio) === normalizar(categoria);
+                if (String(t.activo || 'SI').toUpperCase() !== 'SI') return false;
+                if (!DATOS.categoriasSeleccionadas.length) return true;
+                var ns = normalizar(t.servicio);
+                return DATOS.categoriasSeleccionadas.some(function (c) {
+                    var nc = normalizar(c);
+                    return nc === ns || nc.indexOf(ns) !== -1 || ns.indexOf(nc) !== -1;
+                });
             }).forEach(function (t) {
                 var opt = document.createElement('option');
                 opt.value = String(t.nombre).trim();
@@ -1170,10 +1299,11 @@
         document.getElementById('solicitud-form').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            if (!DATOS.categoriaSeleccionada) {
-                alert('Elige un servicio para continuar.');
+            if (!DATOS.categoriasSeleccionadas.length) {
+                alert('Marca al menos un servicio para continuar.');
                 return;
             }
+            var serviciosTexto = DATOS.categoriasSeleccionadas.join(' + ');
 
             var nombre = document.getElementById('sol-nombre').value.trim();
             var telefono = document.getElementById('sol-telefono').value.trim();
@@ -1183,7 +1313,9 @@
 
             var itemsMarcados = [];
             document.querySelectorAll('#items-container input[type="checkbox"]:checked').forEach(function (chk) {
-                if (chk.value !== '__OTRO__') itemsMarcados.push(chk.value);
+                if (chk.value === '__OTRO__') return;
+                var cat = chk.getAttribute('data-categoria');
+                itemsMarcados.push((cat ? cat + ': ' : '') + chk.value);
             });
 
             if (!itemsMarcados.length && !otroTexto) {
@@ -1202,7 +1334,7 @@
                 tipo: 'solicitud_servicio',
                 nombre: nombre,
                 telefono: telefono,
-                servicio: DATOS.categoriaSeleccionada,
+                servicio: serviciosTexto,
                 tecnico: tecnico,
                 descripcion: descripcion,
                 monto: monto
@@ -1217,7 +1349,7 @@
                     '🛠️ *NUEVA SOLICITUD DE SERVICIO*', '',
                     '👤 *Nombre:* ' + nombre,
                     '📱 *Teléfono:* ' + telefono,
-                    '🔧 *Servicio:* ' + DATOS.categoriaSeleccionada, '',
+                    '🔧 *Servicios:* ' + serviciosTexto, '',
                     '📋 *Trabajos solicitados:*'
                 ];
                 itemsMarcados.forEach(function (item) { lineas.push('  • ' + item); });
@@ -1247,7 +1379,8 @@
             renderRail();
             renderServicios();
             renderTecnicosPorCategoria();
-            renderCategoriaChips();
+            renderCategoriaMulti();
+            actualizarSelectTecnicos();
         });
     </script>
 
