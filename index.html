@@ -4,646 +4,1250 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Técnico SCZ | Aire Acondicionado, Plomería y Electricidad en Santa Cruz</title>
-    <meta name="description" content="Técnico SCZ: instalación, mantenimiento y reparación de aire acondicionado, plomería y electricidad en Santa Cruz de la Sierra. Presupuesto gratis y atención de emergencia por WhatsApp.">
-    <meta name="theme-color" content="#002366">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%230073e6'/%3E%3Cpath fill='%23fff' d='M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42l-.38 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.06.74 1.69.99l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.63-.25 1.17-.59 1.69-.99l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z'/%3E%3C/svg%3E">
+    <meta name="description" content="Técnico SCZ: instalación, mantenimiento y reparación de aire acondicionado, plomería, electricidad y jardinería en Santa Cruz de la Sierra. Solicita tu servicio en línea.">
+    <meta name="theme-color" content="#04142e">
+
+    <!-- ===== Open Graph / Vista previa al compartir el link ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Técnico SCZ">
+    <meta property="og:locale" content="es_BO">
+    <meta property="og:title" content="Técnico SCZ | Servicios Técnicos en Santa Cruz">
+    <meta property="og:description" content="Aire Acondicionado, Plomería, Electricidad y Jardinería. Solicita tu servicio en línea.">
+    <meta property="og:url" content="https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/">
+    <meta property="og:image" content="https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/imagenes/banner.jpg">
+    <meta property="og:image:secure_url" content="https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/imagenes/banner.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Técnico SCZ - Servicios técnicos en Santa Cruz de la Sierra">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Técnico SCZ | Servicios Técnicos en Santa Cruz">
+    <meta name="twitter:description" content="Aire Acondicionado, Plomería, Electricidad y Jardinería. Solicita tu servicio en línea.">
+    <meta name="twitter:image" content="https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/imagenes/banner.jpg">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%2304142e'/%3E%3Cpath fill='%2300e08c' d='M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #0073e6;
-            --dark-blue: #002366;
-            --light-blue: #e6f0fa;
-            --accent-blue: #0056b3;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
-            --white: #ffffff;
-            --whatsapp: #25D366;
+            /* Azul profundo + verde neón oscuro */
+            --bg-deep:      #04142e;
+            --bg-panel:     #0a2247;
+            --bg-panel-2:   #0d2b58;
+            --blue:         #1173e6;
+            --blue-dark:    #002366;
+            --blue-soft:    rgba(17, 115, 230, 0.15);
+
+            --neon:         #00e08c;
+            --neon-dark:    #00a86b;
+            --neon-deep:    #04724d;
+            --neon-glow:    rgba(0, 224, 140, 0.35);
+
+            --text:         #e8f1ff;
+            --text-muted:   #9fb6d6;
+            --line:         rgba(0, 224, 140, 0.18);
+            --line-soft:    rgba(255, 255, 255, 0.08);
+
+            --whatsapp:      #25D366;
             --whatsapp-dark: #1da851;
-            --shadow: 0 10px 25px -5px rgba(0, 115, 230, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+            --shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.75);
             --radius: 16px;
+            --rail-w: 220px;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+        body {
+            background:
+                radial-gradient(1100px 600px at 15% -10%, rgba(17,115,230,0.28), transparent 60%),
+                radial-gradient(900px 500px at 100% 0%, rgba(0,224,140,0.12), transparent 55%),
+                var(--bg-deep);
+            color: var(--text); line-height: 1.6; overflow-x: hidden;
+        }
         section[id] { scroll-margin-top: 90px; }
         a { -webkit-tap-highlight-color: transparent; }
-        :focus-visible { outline: 3px solid var(--primary-blue); outline-offset: 2px; border-radius: 4px; }
+        :focus-visible { outline: 3px solid var(--neon); outline-offset: 2px; border-radius: 4px; }
         img { max-width: 100%; display: block; }
 
-        /* Header / Navbar */
-        header { background-color: var(--white); box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; gap: 1rem; }
+        /* Contenido desplazado para dejar sitio al rail izquierdo */
+        .page-shift { padding-left: var(--rail-w); transition: padding-left 0.25s ease; }
+
+        /* ============ HEADER ============ */
+        header {
+            background: rgba(4, 20, 46, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+            position: sticky; top: 0; z-index: 900;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0.9rem 2rem; gap: 1rem;
+        }
         .logo-container { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .logo-icon {
-            width: 45px; height: 45px; flex-shrink: 0; background: var(--primary-blue);
-            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42l-.38 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.06.74 1.69.99l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.63-.25 1.17-.59 1.69-.99l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z'/%3E%3C/svg%3E") no-repeat center;
-            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.5.42l-.38 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.06.74 1.69.99l.38 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.38-2.65c.63-.25 1.17-.59 1.69-.99l2.49 1c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z'/%3E%3C/svg%3E") no-repeat center;
-            mask-size: contain; -webkit-mask-size: contain;
+            width: 45px; height: 45px; flex-shrink: 0;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-deep) 100%);
+            border: 1px solid var(--neon-dark);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            color: #fff; font-size: 1.4rem;
         }
         .logo-text { display: flex; flex-direction: column; }
-        .logo-title { font-size: 1.5rem; font-weight: 700; color: var(--dark-blue); line-height: 1; }
-        .logo-subtitle { font-size: 0.75rem; color: var(--primary-blue); font-weight: 600; letter-spacing: 1px; border-top: 2px solid var(--dark-blue); margin-top: 2px; padding-top: 2px; }
+        .logo-title { font-size: 1.45rem; font-weight: 700; color: #fff; line-height: 1; }
+        .logo-subtitle {
+            font-size: 0.72rem; color: var(--neon); font-weight: 600;
+            letter-spacing: 1px; border-top: 2px solid var(--neon-dark);
+            margin-top: 3px; padding-top: 2px;
+        }
+        .header-cta { display: flex; align-items: center; gap: 0.6rem; }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; transition: color 0.3s; position: relative; }
-        .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -4px; width: 0; height: 2px; background: var(--primary-blue); transition: width 0.3s ease; }
-        .nav-links a:hover { color: var(--primary-blue); }
-        .nav-links a:hover::after { width: 100%; }
+        /* ============ RAIL DE CATEGORÍAS (IZQUIERDA) ============ */
+        .rail {
+            position: fixed; top: 0; left: 0; bottom: 0;
+            width: var(--rail-w);
+            background: linear-gradient(180deg, var(--bg-panel) 0%, var(--bg-deep) 100%);
+            border-right: 1px solid var(--line);
+            z-index: 1000;
+            display: flex; flex-direction: column;
+            padding: 1rem 0.75rem 1.2rem;
+            overflow-y: auto;
+        }
+        .rail-title {
+            font-size: 0.78rem; font-weight: 600; color: var(--neon);
+            padding: 0.2rem 0.6rem 0.8rem; letter-spacing: 0.5px;
+        }
+        .rail-list { display: flex; flex-direction: column; gap: 0.45rem; }
+        .rail-btn {
+            display: flex; align-items: center; gap: 0.7rem;
+            width: 100%; text-align: left;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--line-soft);
+            border-radius: 12px; padding: 0.5rem 0.6rem;
+            color: var(--text); font-family: inherit; font-size: 0.88rem; font-weight: 500;
+            cursor: pointer; text-decoration: none;
+            transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+        }
+        .rail-btn:hover, .rail-btn.active {
+            border-color: var(--neon-dark);
+            background: rgba(0, 224, 140, 0.10);
+            transform: translateX(3px);
+        }
+        .rail-thumb {
+            width: 42px; height: 42px; border-radius: 10px; flex-shrink: 0;
+            overflow: hidden; background: var(--bg-panel-2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; border: 1px solid var(--line);
+        }
+        .rail-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .rail-label { line-height: 1.2; }
+        .rail-foot { margin-top: auto; padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .rail-link {
+            display: flex; align-items: center; gap: 0.6rem;
+            padding: 0.55rem 0.6rem; border-radius: 10px;
+            color: var(--text-muted); text-decoration: none; font-size: 0.88rem;
+            transition: color 0.2s ease, background 0.2s ease;
+        }
+        .rail-link:hover { color: var(--neon); background: rgba(0,224,140,0.08); }
+        .rail-wa {
+            justify-content: center; background: var(--whatsapp); color: #fff;
+            font-weight: 600; border-radius: 10px; padding: 0.7rem;
+        }
+        .rail-wa:hover { background: var(--whatsapp-dark); color: #fff; }
+        .rail-loading { color: var(--text-muted); font-size: 0.85rem; padding: 0.6rem; }
 
-        .nav-actions { display: flex; align-items: center; gap: 1rem; }
+        /* Botón para abrir el rail en móvil */
+        .rail-toggle {
+            display: none;
+            position: fixed; left: 14px; bottom: 18px; z-index: 1010;
+            width: 54px; height: 54px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-deep) 100%);
+            border: 1px solid var(--neon-dark); color: #fff;
+            font-size: 1.4rem; cursor: pointer;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.5);
+        }
+        .rail-backdrop {
+            display: none; position: fixed; inset: 0;
+            background: rgba(4, 20, 46, 0.65); backdrop-filter: blur(2px);
+            z-index: 999;
+        }
+        .rail-backdrop.is-open { display: block; }
 
+        /* WhatsApp flotante (derecha) */
+        .wa-float {
+            position: fixed; right: 18px; bottom: 18px; z-index: 1010;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: var(--whatsapp); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; text-decoration: none;
+            box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+        .wa-float:hover { background: var(--whatsapp-dark); transform: scale(1.06); }
+
+        /* ============ BOTONES ============ */
         .btn-primary {
-            background-color: var(--primary-blue); color: var(--white);
-            padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none;
-            font-weight: 600; transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-dark) 100%);
+            color: #fff; padding: 0.75rem 1.5rem; border-radius: 10px;
+            text-decoration: none; font-weight: 600;
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
             display: inline-flex; align-items: center; justify-content: center;
-            gap: 8px; border: none; cursor: pointer; font-size: 1rem;
+            gap: 8px; border: 1px solid var(--neon-dark); cursor: pointer; font-size: 1rem;
         }
-        .btn-primary:hover { background-color: var(--accent-blue); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 115, 230, 0.3); }
-
-        .btn-whatsapp {
-            background-color: var(--whatsapp); color: white;
-            padding: 0.85rem 1.8rem; border-radius: 8px; text-decoration: none;
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px var(--neon-glow); }
+        .btn-ghost {
+            background: transparent; color: var(--neon);
+            border: 1px solid var(--neon-dark);
+            padding: 0.75rem 1.5rem; border-radius: 10px; text-decoration: none;
             font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
-            transition: all 0.3s ease; white-space: nowrap;
+            cursor: pointer; font-size: 1rem;
+            transition: background 0.25s ease, transform 0.25s ease;
         }
-        .btn-whatsapp:hover { background-color: var(--whatsapp-dark); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); }
+        .btn-ghost:hover { background: rgba(0,224,140,0.10); transform: translateY(-2px); }
+        .btn-whatsapp {
+            background-color: var(--whatsapp); color: #fff;
+            padding: 0.85rem 1.6rem; border-radius: 10px; text-decoration: none;
+            font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+            transition: all 0.25s ease; white-space: nowrap;
+            border: none; cursor: pointer; font-size: 1rem;
+        }
+        .btn-whatsapp:hover { background-color: var(--whatsapp-dark); transform: translateY(-2px); }
+        .btn-whatsapp:disabled { background: #46608a; cursor: not-allowed; transform: none; }
 
-        .menu-toggle { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: none; border: none; cursor: pointer; padding: 0; }
-        .menu-toggle span { display: block; width: 26px; height: 2px; background: var(--dark-blue); transition: transform 0.3s ease, opacity 0.3s ease; }
-        .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-        .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        /* ============ HERO: SOLO IMAGEN ============ */
+        .hero { padding: 0; background: var(--bg-deep); }
+        .hero-img-wrap {
+            width: 100%; position: relative;
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--neon-deep) 100%);
+            min-height: 220px;
+        }
+        .hero-img-wrap img {
+            width: 100%; height: auto; display: block;
+            object-fit: cover;
+        }
+        /* Barra de acciones justo debajo del hero */
+        .hero-actions {
+            display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--line);
+        }
 
-        /* Hero */
-        .hero { background: linear-gradient(135deg, var(--dark-blue) 0%, #004080 100%); color: var(--white); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
-        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%); pointer-events: none; }
-        .hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
-        .hero-badge { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #dbeafe; padding: 0.4rem 1rem; border-radius: 999px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.2rem; letter-spacing: 0.3px; }
-        .hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; color: #dbeafe; }
-        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        /* ============ SECCIONES ============ */
+        .section-title { text-align: center; margin-bottom: 2.5rem; }
+        .section-title h2 { font-size: 2rem; color: #fff; margin-bottom: 0.4rem; }
+        .section-title h2 span { color: var(--neon); }
+        .section-title p { color: var(--text-muted); font-size: 1rem; }
 
-        /* Services */
-        .services { padding: 5rem 2rem; max-width: 1200px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 3.5rem; }
-        .section-title h2 { font-size: 2.2rem; color: var(--dark-blue); margin-bottom: 0.5rem; }
-        .section-title p { color: var(--text-muted); font-size: 1.05rem; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .service-card { background: var(--white); border-radius: var(--radius); padding: 2.5rem 2rem; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #e2e8f0; position: relative; overflow: hidden; display: flex; flex-direction: column; }
-        .service-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: var(--primary-blue); }
-        .service-card:hover { transform: translateY(-6px); box-shadow: 0 15px 30px rgba(0, 115, 230, 0.15); }
-        .service-icon { width: 65px; height: 65px; background-color: var(--light-blue); color: var(--primary-blue); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.5rem; }
-        .service-card h3 { font-size: 1.4rem; color: var(--dark-blue); margin-bottom: 1rem; }
-        .service-list { list-style: none; margin-bottom: 1.5rem; flex-grow: 1; }
-        .service-list li { padding: 0.4rem 0; color: var(--text-dark); display: flex; align-items: flex-start; gap: 8px; font-size: 0.95rem; }
-        .service-list li::before { content: "✓"; color: var(--primary-blue); font-weight: bold; flex-shrink: 0; }
+        /* ============ SERVICIOS ============ */
+        .services { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+        .service-card {
+            background: var(--bg-panel); border-radius: var(--radius);
+            overflow: hidden; box-shadow: var(--shadow);
+            border: 1px solid var(--line-soft);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            display: flex; flex-direction: column;
+        }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--neon-dark); }
+        .service-image { width: 100%; height: 190px; overflow: hidden; background: var(--bg-panel-2); }
+        .service-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .service-card:hover .service-image img { transform: scale(1.06); }
+        .service-image-fallback {
+            width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--neon-deep) 100%);
+        }
+        .service-body { padding: 1.6rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .service-card h3 { font-size: 1.3rem; color: #fff; margin-bottom: 0.9rem; }
+        .service-list { list-style: none; margin-bottom: 1.4rem; flex-grow: 1; }
+        .service-list li {
+            padding: 0.35rem 0; color: var(--text-muted);
+            display: flex; align-items: flex-start; gap: 8px; font-size: 0.92rem;
+        }
+        .service-list li::before { content: "✓"; color: var(--neon); font-weight: bold; flex-shrink: 0; }
         .service-card .btn-primary { width: 100%; }
 
-        /* Features */
-        .features { background-color: var(--light-blue); padding: 4rem 2rem; }
-        .features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center; }
-        .feature-box { padding: 1.5rem; }
-        .feature-icon { font-size: 2.5rem; color: var(--primary-blue); }
-        .feature-box h4 { color: var(--dark-blue); font-size: 1.2rem; margin: 0.8rem 0 0.5rem 0; }
+        /* ============ TÉCNICOS ============ */
+        .tecnicos-section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .tecnicos-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2.5rem; }
+        .tecnicos-tabs button {
+            background: rgba(255,255,255,0.04); border: 1px solid var(--line-soft);
+            color: var(--text); padding: 0.55rem 1.3rem; border-radius: 999px;
+            font-size: 0.9rem; font-weight: 500; cursor: pointer;
+            transition: all 0.25s ease; font-family: inherit;
+        }
+        .tecnicos-tabs button:hover { border-color: var(--neon-dark); color: var(--neon); }
+        .tecnicos-tabs button.active {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-dark) 100%);
+            border-color: var(--neon-dark); color: #fff;
+        }
+        .tecnicos-grid-cat { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 1.4rem; }
+        .tecnico-card-cat {
+            background: var(--bg-panel); border-radius: var(--radius);
+            padding: 1.5rem; box-shadow: var(--shadow);
+            border: 1px solid var(--line-soft);
+            display: flex; flex-direction: column; gap: 0.85rem;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .tecnico-card-cat:hover { transform: translateY(-4px); border-color: var(--neon-dark); }
+        .tecnico-top-cat { display: flex; align-items: center; gap: 0.85rem; }
+        .tecnico-avatar-cat {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-deep) 100%);
+            color: #fff; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1rem; flex-shrink: 0; overflow: hidden;
+        }
+        .tecnico-info-cat h4 { color: #fff; font-size: 1.02rem; }
+        .tecnico-servicio-tag-cat { font-size: 0.76rem; color: var(--neon); font-weight: 600; letter-spacing: 0.3px; }
+        .tecnico-detalles-cat { font-size: 0.88rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.25rem; }
+        .tecnico-tarifa-cat { font-size: 0.92rem; color: var(--text-muted); }
+        .tecnico-tarifa-cat strong { color: var(--neon); font-size: 1.1rem; }
+        .tecnico-card-cat .btn-whatsapp { justify-content: center; padding: 0.65rem 1.1rem; font-size: 0.93rem; }
+
+        /* ============ SOLICITAR SERVICIO ============ */
+        .solicitar { padding: 4rem 2rem; max-width: 900px; margin: 0 auto; }
+        .solicitar-card {
+            background: var(--bg-panel); border-radius: var(--radius);
+            padding: 2.5rem; box-shadow: var(--shadow);
+            border: 1px solid var(--line);
+        }
+        .form-group { margin-bottom: 1.4rem; }
+        .form-group label { display: block; margin-bottom: 0.45rem; font-weight: 500; color: var(--text); }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; padding: 0.8rem 1rem;
+            border: 1px solid var(--line-soft); border-radius: 10px;
+            font-size: 1rem; outline: none;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            background: rgba(255,255,255,0.04); color: var(--text);
+            font-family: inherit;
+        }
+        .form-group input::placeholder, .form-group textarea::placeholder { color: #6f88ac; }
+        .form-group select option { background: var(--bg-panel); color: var(--text); }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--neon-dark);
+            box-shadow: 0 0 0 3px rgba(0, 224, 140, 0.18);
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+        .categoria-chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.4rem; }
+        .chip {
+            background: rgba(255,255,255,0.04); border: 1px solid var(--line-soft);
+            color: var(--text); padding: 0.4rem 1rem 0.4rem 0.4rem;
+            border-radius: 999px; font-size: 0.9rem; font-weight: 500;
+            cursor: pointer; transition: all 0.25s ease;
+            font-family: inherit; display: inline-flex; align-items: center; gap: 8px;
+        }
+        .chip img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; }
+        .chip:hover { border-color: var(--neon-dark); color: var(--neon); }
+        .chip.active {
+            background: linear-gradient(135deg, var(--blue) 0%, var(--neon-dark) 100%);
+            border-color: var(--neon-dark); color: #fff;
+        }
+
+        .items-container { background: rgba(255,255,255,0.03); border: 1px solid var(--line-soft); padding: 1.1rem; border-radius: 12px; margin-top: 0.4rem; }
+        .item-checkbox {
+            display: flex; align-items: flex-start; gap: 10px;
+            padding: 0.55rem 0.4rem; cursor: pointer;
+            font-size: 0.93rem; color: var(--text);
+            transition: background 0.2s ease; border-radius: 8px;
+        }
+        .item-checkbox:hover { background: rgba(0,224,140,0.08); }
+        .item-checkbox input[type="checkbox"] {
+            width: 18px; height: 18px; accent-color: var(--neon-dark);
+            flex-shrink: 0; margin-top: 3px; cursor: pointer;
+        }
+        .items-placeholder { color: var(--text-muted); font-size: 0.9rem; text-align: center; padding: 1rem; }
+
+        .otro-textarea { margin-top: 1rem; display: none; }
+        .otro-textarea.visible { display: block; }
+
+        .tecnico-info-preview {
+            background: rgba(0,224,140,0.08); border: 1px solid var(--line);
+            padding: 1rem; border-radius: 10px; margin-top: 0.5rem;
+            font-size: 0.9rem; color: var(--text-muted); display: none;
+        }
+        .tecnico-info-preview.visible { display: block; }
+        .tecnico-info-preview strong { color: var(--neon); }
+
+        .monto-wrapper { position: relative; }
+        .monto-wrapper span { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--neon); font-weight: 600; }
+        .monto-wrapper input { padding-left: 2.6rem !important; }
+
+        .submit-btn { width: 100%; font-size: 1.05rem; padding: 1rem; margin-top: 0.8rem; }
+        .loading-text { text-align: center; padding: 2rem 1rem; color: var(--text-muted); }
+
+        /* ============ FEATURES ============ */
+        .features {
+            background: linear-gradient(180deg, rgba(10,34,71,0.9) 0%, rgba(4,20,46,0.9) 100%);
+            border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+            padding: 3.5rem 2rem;
+        }
+        .features-container {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 2rem; text-align: center;
+        }
+        .feature-box { padding: 1.2rem; }
+        .feature-icon { font-size: 2.3rem; }
+        .feature-box h4 { color: var(--neon); font-size: 1.12rem; margin: 0.7rem 0 0.4rem 0; }
         .feature-box p { color: var(--text-muted); font-size: 0.9rem; }
 
-        /* Buscar Técnico */
-        .buscar-tecnico { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-        .filtro-card { background: var(--white); border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); border: 1px solid #e2e8f0; margin-bottom: 2.5rem; }
-        .filtro-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 1.2rem; align-items: end; }
-        .filtro-grid .btn-primary { height: 50px; white-space: nowrap; }
-        .monto-input-wrapper { position: relative; }
-        .monto-input-wrapper span { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-weight: 600; }
-        .monto-input-wrapper input { padding-left: 2.6rem !important; }
-
-        .resultados-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem; flex-wrap: wrap; gap: 0.5rem; }
-        .resultados-header h3 { color: var(--dark-blue); font-size: 1.2rem; }
-        .resultados-count { font-size: 0.9rem; color: var(--text-muted); background: var(--light-blue); padding: 0.3rem 0.9rem; border-radius: 999px; }
-
-        .tecnicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .tecnico-card { background: var(--white); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow); border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.9rem; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .tecnico-card:hover { transform: translateY(-4px); box-shadow: 0 15px 30px rgba(0, 115, 230, 0.15); }
-        .tecnico-top { display: flex; align-items: center; gap: 0.9rem; }
-        .tecnico-avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--light-blue); color: var(--primary-blue); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
-        .tecnico-info h4 { color: var(--dark-blue); font-size: 1.05rem; }
-        .tecnico-servicio-tag { font-size: 0.78rem; color: var(--primary-blue); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
-        .tecnico-detalles { font-size: 0.9rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.3rem; }
-        .tecnico-tarifa { font-size: 0.95rem; color: var(--text-dark); }
-        .tecnico-tarifa strong { color: var(--dark-blue); font-size: 1.15rem; }
-        .tecnico-card .btn-whatsapp { justify-content: center; padding: 0.7rem 1.2rem; font-size: 0.95rem; }
-
-        .sin-resultados { text-align: center; padding: 3rem 1.5rem; background: var(--light-blue); border-radius: var(--radius); color: var(--text-muted); }
-        .sin-resultados strong { display: block; color: var(--dark-blue); font-size: 1.1rem; margin-bottom: 0.4rem; }
-        .resultados-oculto { display: none; }
-        .demo-aviso { font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1.5rem; }
-
-        @media (max-width: 700px) { .filtro-grid { grid-template-columns: 1fr; } }
-
-        /* Contact */
-        .contact { padding: 5rem 2rem; max-width: 1000px; margin: 0 auto; }
-        .contact-card { background: var(--white); border-radius: var(--radius); padding: 3rem; box-shadow: var(--shadow); border: 1px solid #e2e8f0; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--dark-blue); }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 0.8rem 1rem; border: 1px solid #cbd5e1; border-radius: 8px;
-            font-size: 1rem; outline: none; transition: border-color 0.3s, box-shadow 0.3s;
-            background: var(--white); color: var(--text-dark);
+        /* ============ FOOTER ============ */
+        footer {
+            background: #030f22; color: var(--text);
+            border-top: 1px solid var(--line);
+            padding: 3rem 2rem 1.5rem 2rem; text-align: center;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--primary-blue); box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.15);
-        }
-        .form-note { font-size: 0.8rem; color: var(--text-muted); margin-top: -0.75rem; margin-bottom: 1.5rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto 2rem; }
+        .footer-content h3 { color: var(--neon); margin-bottom: 0.5rem; }
+        .footer-copy { border-top: 1px solid var(--line-soft); padding-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
 
-        /* Footer */
-        footer { background-color: var(--dark-blue); color: var(--white); padding: 3rem 2rem 1.5rem 2rem; text-align: center; }
-        .footer-content { max-width: 1200px; margin: 0 auto; margin-bottom: 2rem; }
-        .footer-copy { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; font-size: 0.85rem; color: #94a3b8; }
-
-        /* WhatsApp flotante */
-        .whatsapp-float {
-            position: fixed; bottom: 1.5rem; right: 1.5rem; width: 60px; height: 60px;
-            background-color: var(--whatsapp); border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-            z-index: 999; transition: transform 0.3s ease, background-color 0.3s ease; text-decoration: none;
-        }
-        .whatsapp-float:hover { transform: scale(1.08); background-color: var(--whatsapp-dark); }
-        .whatsapp-float svg { width: 30px; height: 30px; fill: white; }
-
+        /* ============ RESPONSIVE ============ */
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }
             * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
         }
-
-        @media (max-width: 900px) {
-            .nav-links { position: fixed; top: 78px; left: 0; right: 0; background: var(--white); flex-direction: column; gap: 0; padding: 0.5rem 2rem 1rem; box-shadow: 0 10px 20px rgba(0,0,0,0.08); transform: translateY(-10px); opacity: 0; pointer-events: none; transition: transform 0.25s ease, opacity 0.25s ease; }
-            .nav-links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-            .nav-links a { display: block; padding: 0.9rem 0; border-bottom: 1px solid #f1f5f9; }
-            .nav-actions .btn-whatsapp span.btn-label { display: none; }
-            .menu-toggle { display: flex; }
+        @media (max-width: 1100px) {
+            :root { --rail-w: 0px; }
+            .page-shift { padding-left: 0; }
+            .rail {
+                width: 260px; transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            .rail.is-open { transform: translateX(0); }
+            .rail-toggle { display: flex; align-items: center; justify-content: center; }
         }
-
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 3.5rem 1.5rem; }
-            .contact-card { padding: 1.5rem; }
-            .whatsapp-float { width: 54px; height: 54px; bottom: 1rem; right: 1rem; }
+            .nav-container { padding: 0.8rem 1.1rem; }
+            .header-cta { display: none; }
+            .logo-title { font-size: 1.2rem; }
+            .section-title h2 { font-size: 1.6rem; }
+            .solicitar-card { padding: 1.4rem; }
+            .services, .tecnicos-section, .solicitar { padding: 3rem 1.2rem; }
+            .hero-actions { padding: 1.2rem; }
+            .wa-float { width: 50px; height: 50px; font-size: 1.4rem; }
+            .rail-toggle { width: 50px; height: 50px; }
         }
-        @media (max-width: 480px) {
-            .nav-container { padding: 0.85rem 1.25rem; }
-            .logo-title { font-size: 1.25rem; }
-        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.45s ease; }
     </style>
 </head>
 <body>
 
-    <!-- Header / Nav -->
-    <header>
-        <div class="nav-container">
-            <a href="#inicio" class="logo-container">
-                <div class="logo-icon" aria-hidden="true"></div>
-                <div class="logo-text">
-                    <span class="logo-title">Técnico SCZ</span>
-                    <span class="logo-subtitle">SANTA CRUZ · BOLIVIA</span>
-                </div>
-            </a>
-
-            <nav aria-label="Navegación principal">
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#buscar-tecnico">Buscar Técnico</a></li>
-                    <li><a href="#nosotros">Por qué elegirnos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
-
-            <div class="nav-actions">
-                <a href="https://wa.me/59170000000?text=Hola%20T%C3%A9cnico%20SCZ%2C%20necesito%20una%20cotizaci%C3%B3n"
-                   class="btn-whatsapp" target="_blank" rel="noopener">
-                    📱 <span class="btn-label">WhatsApp Directo</span>
-                </a>
-                <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
+    <!-- ============ BARRA LATERAL IZQUIERDA (CATEGORÍAS) ============ -->
+    <aside class="rail" id="rail" aria-label="Categorías de servicio">
+        <div class="rail-title">Nuestros servicios</div>
+        <div class="rail-list" id="rail-list">
+            <div class="rail-loading">Cargando categorías...</div>
         </div>
-    </header>
+        <div class="rail-foot">
+            <a href="#inicio" class="rail-link">🏠 Inicio</a>
+            <a href="#servicios" class="rail-link">🛠️ Servicios</a>
+            <a href="#tecnicos" class="rail-link">👨‍🔧 Técnicos</a>
+            <a href="#solicitar" class="rail-link">📝 Solicitar servicio</a>
+            <a href="#nosotros" class="rail-link">⭐ Por qué elegirnos</a>
+            <a href="https://wa.me/59163398100?text=Hola%20T%C3%A9cnico%20SCZ%2C%20necesito%20informaci%C3%B3n"
+               class="rail-link rail-wa" target="_blank" rel="noopener">📱 Escribir por WhatsApp</a>
+        </div>
+    </aside>
+    <div class="rail-backdrop" id="rail-backdrop"></div>
+    <button class="rail-toggle" id="rail-toggle" type="button" aria-label="Abrir categorías">☰</button>
 
-    <main>
-        <!-- Hero -->
-        <section class="hero" id="inicio">
-            <div class="hero-content">
-                <span class="hero-badge">🕒 Atendemos las 24 horas para emergencias</span>
-                <h1>Servicios Técnicos Profesionales en Santa Cruz</h1>
-                <p>Especialistas en Aire Acondicionado, Plomería y Electricidad. Soluciones rápidas, garantizadas y a domicilio.</p>
-                <div class="hero-buttons">
-                    <a href="#contacto" class="btn-primary">Solicitar Presupuesto</a>
-                    <a href="https://wa.me/59170000000?text=Hola%2C%20tengo%20una%20emergencia%20t%C3%A9cnica" class="btn-whatsapp" target="_blank" rel="noopener">Atención de Emergencia</a>
+    <a href="https://wa.me/59163398100?text=Hola%20T%C3%A9cnico%20SCZ%2C%20necesito%20informaci%C3%B3n"
+       class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">📱</a>
+
+    <div class="page-shift">
+        <!-- Header -->
+        <header>
+            <div class="nav-container">
+                <a href="#inicio" class="logo-container">
+                    <div class="logo-icon" aria-hidden="true">🛠️</div>
+                    <div class="logo-text">
+                        <span class="logo-title">Técnico SCZ</span>
+                        <span class="logo-subtitle">SANTA CRUZ · BOLIVIA</span>
+                    </div>
+                </a>
+                <div class="header-cta">
+                    <a href="#solicitar" class="btn-ghost">Solicitar servicio</a>
                 </div>
             </div>
-        </section>
+        </header>
 
-        <!-- Servicios (DINÁMICOS desde Google Sheets) -->
-        <section class="services" id="servicios">
-            <div class="section-title">
-                <h2>Nuestros Servicios Especializados</h2>
-                <p>Atención integral para tu hogar, oficina o negocio con técnicos capacitados</p>
+        <main>
+            <!-- Hero: solo imagen -->
+            <section class="hero" id="inicio">
+                <div class="hero-img-wrap">
+                    <img id="hero-img" src="" alt="Técnico SCZ - Servicios técnicos en Santa Cruz de la Sierra" fetchpriority="high">
+                </div>
+            </section>
+
+            <div class="hero-actions">
+                <a href="#solicitar" class="btn-primary">Solicitar servicio</a>
+                <a href="https://wa.me/59163398100?text=Hola%2C%20tengo%20una%20emergencia%20t%C3%A9cnica"
+                   class="btn-whatsapp" target="_blank" rel="noopener">Atención de emergencia</a>
             </div>
 
-            <div class="services-grid" id="servicios-grid">
-                <div class="sin-resultados" style="grid-column: 1 / -1;">Cargando servicios...</div>
-            </div>
-        </section>
+            <!-- Servicios -->
+            <section class="services" id="servicios">
+                <div class="section-title">
+                    <h2>Nuestros servicios <span>especializados</span></h2>
+                    <p>Atención integral para tu hogar, oficina o negocio con técnicos capacitados</p>
+                </div>
+                <div class="services-grid" id="servicios-grid">
+                    <div class="loading-text" style="grid-column: 1 / -1;">Cargando servicios...</div>
+                </div>
+            </section>
 
-        <!-- Buscar Técnico (DINÁMICO desde Google Sheets) -->
-        <section class="buscar-tecnico" id="buscar-tecnico">
-            <div class="section-title">
-                <h2>Busca un Técnico según tu Presupuesto</h2>
-                <p>Elige el servicio, indica cuánto estás dispuesto a pagar y te mostramos los técnicos que aceptan ese monto</p>
-            </div>
+            <!-- Técnicos -->
+            <section class="tecnicos-section" id="tecnicos">
+                <div class="section-title">
+                    <h2>Nuestros <span>técnicos</span></h2>
+                    <p>Explora los técnicos por especialidad y contáctalos directamente</p>
+                </div>
+                <div class="tecnicos-tabs" id="tecnicos-tabs">
+                    <div class="loading-text">Cargando técnicos...</div>
+                </div>
+                <div class="tecnicos-grid-cat" id="tecnicos-grid-cat"></div>
+            </section>
 
-            <div class="filtro-card">
-                <form id="filtro-form">
-                    <div class="filtro-grid">
-                        <div class="form-group" style="margin-bottom:0;">
-                            <label for="filtro-servicio">Tipo de falla / servicio</label>
-                            <select id="filtro-servicio" name="filtro-servicio" required>
-                                <option value="">Selecciona un servicio</option>
-                                <option value="Plomería">Plomería</option>
-                                <option value="Electricidad">Electricidad</option>
-                                <option value="Aire Acondicionado">Aire Acondicionado</option>
-                            </select>
-                        </div>
-                        <div class="form-group" style="margin-bottom:0;">
-                            <label for="filtro-monto">¿Cuánto estás dispuesto a pagar?</label>
-                            <div class="monto-input-wrapper">
-                                <span>Bs</span>
-                                <input type="number" id="filtro-monto" name="filtro-monto" placeholder="Ej: 150" min="1" required>
+            <!-- Solicitar servicio -->
+            <section class="solicitar" id="solicitar">
+                <div class="section-title">
+                    <h2>Solicita tu <span>servicio</span></h2>
+                    <p>Completa el formulario y nos ponemos en contacto contigo de inmediato</p>
+                </div>
+
+                <div class="solicitar-card">
+                    <form id="solicitud-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="sol-nombre">Nombre completo *</label>
+                                <input type="text" id="sol-nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sol-telefono">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="sol-telefono" name="telefono" placeholder="Ej: 70012345" pattern="[0-9]{7,8}" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn-primary">🔍 Buscar Técnicos</button>
+
+                        <div class="form-group">
+                            <label>¿Qué servicio necesitas? *</label>
+                            <div class="categoria-chips" id="categoria-chips">
+                                <div class="loading-text" style="padding: 0.5rem;">Cargando...</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="items-group" style="display: none;">
+                            <label>Selecciona los trabajos que necesitas:</label>
+                            <div class="items-container" id="items-container"></div>
+                        </div>
+
+                        <div class="form-group otro-textarea" id="otro-group">
+                            <label for="sol-otro">Especifica otro trabajo:</label>
+                            <textarea id="sol-otro" rows="3" placeholder="Describe el trabajo que necesitas..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sol-tecnico">Técnico preferido:</label>
+                            <select id="sol-tecnico" name="tecnico">
+                                <option value="Cualquiera disponible">Cualquiera disponible</option>
+                            </select>
+                            <div class="tecnico-info-preview" id="tecnico-preview"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sol-monto">Monto dispuesto a pagar (Bs) *</label>
+                            <div class="monto-wrapper">
+                                <span>Bs</span>
+                                <input type="number" id="sol-monto" name="monto" placeholder="Ej: 200" min="1" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-whatsapp submit-btn" id="sol-submit">
+                            📱 Enviar solicitud por WhatsApp
+                        </button>
+
+                        <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+                            Tu solicitud llega a nuestro equipo para asignarte el mejor técnico.
+                        </p>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="features" id="nosotros">
+                <div class="features-container">
+                    <div class="feature-box">
+                        <div class="feature-icon" aria-hidden="true">⚡</div>
+                        <h4>Respuesta rápida</h4>
+                        <p>Atención oportuna para emergencias técnicas en Santa Cruz.</p>
                     </div>
-                </form>
+                    <div class="feature-box">
+                        <div class="feature-icon" aria-hidden="true">🛡️</div>
+                        <h4>Garantía de trabajo</h4>
+                        <p>Todos nuestros servicios cuentan con garantía respaldada.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon" aria-hidden="true">👨‍🔧</div>
+                        <h4>Técnicos certificados</h4>
+                        <p>Personal capacitado y con amplia experiencia técnica.</p>
+                    </div>
+                    <div class="feature-box">
+                        <div class="feature-icon" aria-hidden="true">🏷️</div>
+                        <h4>Precios justos</h4>
+                        <p>Presupuestos transparentes sin costos ocultos.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <h3>Técnico SCZ</h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Servicios integrales de aire acondicionado, plomería, electricidad y jardinería</p>
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Santa Cruz de la Sierra - Bolivia</p>
             </div>
-
-            <div id="resultados-wrapper" class="resultados-oculto">
-                <div class="resultados-header">
-                    <h3 id="resultados-titulo">Resultados</h3>
-                    <span class="resultados-count" id="resultados-count">0 técnicos</span>
-                </div>
-                <div class="tecnicos-grid" id="tecnicos-grid"></div>
+            <div class="footer-copy">
+                &copy; <span id="year"></span> Técnico SCZ. Todos los derechos reservados.
             </div>
-
-            <p class="demo-aviso">* Lista de técnicos cargada dinámicamente desde nuestra base de datos.</p>
-        </section>
-
-        <!-- Features -->
-        <section class="features" id="nosotros">
-            <div class="features-container">
-                <div class="feature-box">
-                    <div class="feature-icon" aria-hidden="true">⚡</div>
-                    <h4>Respuesta Rápida</h4>
-                    <p>Atención oportuna para emergencias técnicas en Santa Cruz.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon" aria-hidden="true">🛡️</div>
-                    <h4>Garantía de Trabajo</h4>
-                    <p>Todos nuestros servicios cuentan con garantía respaldada.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon" aria-hidden="true">👨‍🔧</div>
-                    <h4>Técnicos Certificados</h4>
-                    <p>Personal capacitado y con amplia experiencia técnica.</p>
-                </div>
-                <div class="feature-box">
-                    <div class="feature-icon" aria-hidden="true">🏷️</div>
-                    <h4>Precios Justos</h4>
-                    <p>Presupuestos transparentes sin costos ocultos.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contacto -->
-        <section class="contact" id="contacto">
-            <div class="contact-card">
-                <div class="section-title" style="margin-bottom: 2rem;">
-                    <h2>Solicita tu Cotización Gratis</h2>
-                    <p>Déjanos tus datos y nos pondremos en contacto contigo de inmediato</p>
-                </div>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono / WhatsApp</label>
-                        <input type="tel" id="telefono" name="telefono" placeholder="Ej: 70000000" pattern="[0-9]{7,8}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio Requerido</label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="">Selecciona un servicio</option>
-                            <option value="Aire Acondicionado">Aire Acondicionado</option>
-                            <option value="Plomería">Plomería</option>
-                            <option value="Electricidad">Electricidad</option>
-                            <option value="Servicio Combinado / Mantenimiento">Servicio Combinado / Mantenimiento</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Detalle de la consulta o trabajo a realizar</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Describe brevemente lo que necesitas..."></textarea>
-                    </div>
-                    <p class="form-note">Al enviar, tus datos se registrarán y se abrirá WhatsApp para confirmar tu solicitud.</p>
-                    <button type="submit" class="btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Enviar Solicitud</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <h3 style="margin-bottom: 0.5rem;">Técnico SCZ</h3>
-            <p style="color: #cbd5e1; font-size: 0.95rem;">Servicios Integrales de Aire Acondicionado, Plomería y Electricidad</p>
-            <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 0.5rem;">Coordenadas de Cobertura: Santa Cruz de la Sierra - Bolivia</p>
-        </div>
-        <div class="footer-copy">
-            &copy; <span id="year"></span> Técnico SCZ. Todos los derechos reservados.
-        </div>
-    </footer>
-
-    <!-- WhatsApp flotante -->
-    <a href="https://wa.me/59170000000?text=Hola%20T%C3%A9cnico%20SCZ%2C%20necesito%20una%20cotizaci%C3%B3n"
-       class="whatsapp-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.71.45 3.38 1.3 4.85L2.05 22l5.36-1.4a9.9 9.9 0 0 0 4.63 1.18h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.55-3.7 8.25-8.25 8.25a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.18.83.85-3.1-.2-.32a8.2 8.2 0 0 1-1.26-4.37c0-4.55 3.7-8.25 8.25-8.25M8.85 6.65c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.23.9 2.42 1.02 2.59.13.17 1.75 2.8 4.32 3.82 2.14.85 2.58.68 3.04.63.47-.04 1.5-.6 1.71-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.17-.48-.29-.25-.13-1.5-.74-1.73-.83-.23-.08-.4-.13-.57.13-.17.25-.65.83-.8 1-.15.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.29.38-.44.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.4-.79-1.91-.2-.5-.42-.43-.57-.44Z"/></svg>
-    </a>
+        </footer>
+    </div>
 
     <script>
-        // ====== URL de tu Google Apps Script ======
+        // ====================================================================
+        // ============ CONFIGURACIÓN =======================================
+        // ====================================================================
         var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzyk06NtQ6qVFmWZKZUY0o8uTXjxxYoFnu3gzX3fsUzbxjcHTN65CB821q8AUmIl15qDg/exec';
+        var WHATSAPP_DUENO = '59163398100';
 
-        // ====== Menú móvil ======
-        (function () {
-            var toggle = document.getElementById('menu-toggle');
-            var nav = document.getElementById('nav-links');
+        // 🖼️ Carpeta de imágenes del repositorio
+        var IMG_BASE = 'https://vargassoriaserviciotecnicoscz-blip.github.io/serviciostecnicoscz/imagenes/';
 
-            function closeMenu() {
-                nav.classList.remove('is-open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.setAttribute('aria-label', 'Abrir menú');
+        // Imagen del hero: se prueban en orden hasta que una cargue
+        var HERO_CANDIDATOS = ['hero.jpg', 'banner.jpg', 'hero.png', 'banner.png', 'portada.jpg'];
+
+        // Extensiones que se prueban para cada categoría
+        var EXTENSIONES = ['.jpg', '.jpeg', '.png', '.webp'];
+
+        // Nombres de archivo conocidos por palabra clave (se prueba primero)
+        var ALIAS_IMAGENES = [
+            { claves: ['aire', 'acondicionado', 'split', 'clima'], archivo: 'aire-acondicionado' },
+            { claves: ['plomer', 'gasfiter', 'agua'],              archivo: 'plomeria' },
+            { claves: ['electric', 'electri'],                     archivo: 'electricidad' },
+            { claves: ['jardin', 'cesped', 'poda'],                archivo: 'jardineria' },
+            { claves: ['camar', 'seguridad', 'cctv'],              archivo: 'camaras' },
+            { claves: ['refriger', 'heladera', 'frigor'],          archivo: 'refrigeracion' },
+            { claves: ['albanil', 'construc', 'obra'],             archivo: 'albanileria' },
+            { claves: ['pintur', 'pintar'],                        archivo: 'pintura' },
+            { claves: ['carpinter', 'madera'],                     archivo: 'carpinteria' },
+            { claves: ['limpiez', 'lavado'],                       archivo: 'limpieza' },
+            { claves: ['cerrajer', 'cerradura'],                   archivo: 'cerrajeria' },
+            { claves: ['soldadur', 'metal', 'herrer'],             archivo: 'herreria' }
+        ];
+
+        var EMOJIS = [
+            { claves: ['aire', 'acondicionado'], emoji: '❄️' },
+            { claves: ['plomer'],                emoji: '🔧' },
+            { claves: ['electric'],              emoji: '⚡' },
+            { claves: ['jardin'],                emoji: '🌱' },
+            { claves: ['camar', 'seguridad'],    emoji: '📹' },
+            { claves: ['pintur'],                emoji: '🎨' },
+            { claves: ['carpinter'],             emoji: '🪚' },
+            { claves: ['limpiez'],               emoji: '🧼' },
+            { claves: ['cerrajer'],              emoji: '🔑' },
+            { claves: ['herrer', 'soldad'],      emoji: '🔩' }
+        ];
+
+        var DATOS = {
+            servicios: [],
+            tecnicos: [],
+            categorias: [],
+            categoriaSeleccionada: null
+        };
+
+        // ====================================================================
+        // ============ UTILIDADES DE IMÁGENES ==============================
+        // ====================================================================
+        function normalizar(txt) {
+            return String(txt || '').toLowerCase()
+                .normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
+        }
+
+        function slug(txt) {
+            return normalizar(txt).replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+        }
+
+        function emojiDeCategoria(cat) {
+            var n = normalizar(cat);
+            for (var i = 0; i < EMOJIS.length; i++) {
+                for (var j = 0; j < EMOJIS[i].claves.length; j++) {
+                    if (n.indexOf(EMOJIS[i].claves[j]) !== -1) return EMOJIS[i].emoji;
+                }
+            }
+            return '🛠️';
+        }
+
+        // Lista ordenada de URLs candidatas para una categoría
+        function candidatosImagen(categoria) {
+            var n = normalizar(categoria);
+            var bases = [];
+
+            for (var i = 0; i < ALIAS_IMAGENES.length; i++) {
+                for (var j = 0; j < ALIAS_IMAGENES[i].claves.length; j++) {
+                    if (n.indexOf(ALIAS_IMAGENES[i].claves[j]) !== -1) {
+                        if (bases.indexOf(ALIAS_IMAGENES[i].archivo) === -1) {
+                            bases.push(ALIAS_IMAGENES[i].archivo);
+                        }
+                        break;
+                    }
+                }
+            }
+            var s = slug(categoria);
+            if (s && bases.indexOf(s) === -1) bases.push(s);
+            bases.push('servicio-generico');
+
+            var urls = [];
+            bases.forEach(function (b) {
+                EXTENSIONES.forEach(function (ext) { urls.push(IMG_BASE + b + ext); });
+            });
+            return urls;
+        }
+
+        // Asigna una imagen probando candidatos; si ninguna carga, muestra el emoji
+        function aplicarImagen(img, categoria, onFallo) {
+            var urls = candidatosImagen(categoria);
+            var idx = 0;
+            img.addEventListener('error', function () {
+                idx++;
+                if (idx < urls.length) {
+                    img.src = urls[idx];
+                } else if (typeof onFallo === 'function') {
+                    onFallo();
+                }
+            });
+            img.src = urls[0];
+        }
+
+        function cargarHero() {
+            var img = document.getElementById('hero-img');
+            var idx = 0;
+            img.addEventListener('error', function () {
+                idx++;
+                if (idx < HERO_CANDIDATOS.length) {
+                    img.src = IMG_BASE + HERO_CANDIDATOS[idx];
+                } else {
+                    img.style.display = 'none';
+                    document.querySelector('.hero-img-wrap').style.minHeight = '260px';
+                }
+            });
+            img.src = IMG_BASE + HERO_CANDIDATOS[0];
+        }
+
+        // ====================================================================
+        // ============ DATOS DESDE GOOGLE SHEETS ===========================
+        // ====================================================================
+        var FALLBACK_SERVICIOS = [
+            { id: 1, icono: '❄️', titulo: 'Aire Acondicionado', items: 'Instalación de equipos Split y Centrales|Mantenimiento preventivo y limpieza profunda|Reparación de fugas de gas y recarga de refrigerante|Diagnóstico y reparación de fallas eléctricas/mecánicas', boton: 'Solicitar Aire Acondicionado' },
+            { id: 2, icono: '🔧', titulo: 'Plomería Integral', items: 'Reparación de fugas de agua y filtraciones|Destape de cañerías, desagües y sanitarios|Instalación de grifería, duchas y bombas de agua|Mantenimiento e instalación de calefones / termotanques', boton: 'Solicitar Plomería' },
+            { id: 3, icono: '⚡', titulo: 'Electricidad', items: 'Instalaciones eléctricas residenciales y comerciales|Tableros eléctricos, térmicas y protecciones|Instalación de puntos de luz, tomacorrientes y luminarias|Adecuaciones eléctricas para equipos de Aire Acondicionado', boton: 'Solicitar Electricidad' },
+            { id: 4, icono: '🌱', titulo: 'Jardinería', items: 'Corte de césped|Poda de árboles y arbustos|Plantación y trasplante|Sistemas de riego', boton: 'Solicitar Jardinería' }
+        ];
+
+        var FALLBACK_TECNICOS = [
+            { nombre: 'Marcelo Rivero', servicio: 'Plomería Integral', tarifamin: 80, telefono: '59170111222', experiencia: '6 años de experiencia', activo: 'SI' },
+            { nombre: 'Ronald Suárez', servicio: 'Electricidad', tarifamin: 100, telefono: '59170444555', experiencia: '8 años de experiencia', activo: 'SI' },
+            { nombre: 'Wilson Paz', servicio: 'Aire Acondicionado', tarifamin: 150, telefono: '59170777888', experiencia: 'Técnico Split y Central', activo: 'SI' }
+        ];
+
+        function cargarDatos() {
+            return fetch(SCRIPT_URL)
+                .then(function (resp) { return resp.json(); })
+                .then(function (data) {
+                    if (data.result === 'success') {
+                        DATOS.servicios = (data.servicios && data.servicios.length) ? data.servicios : FALLBACK_SERVICIOS;
+                        DATOS.tecnicos  = (data.tecnicos  && data.tecnicos.length)  ? data.tecnicos  : FALLBACK_TECNICOS;
+                    } else {
+                        DATOS.servicios = FALLBACK_SERVICIOS;
+                        DATOS.tecnicos  = FALLBACK_TECNICOS;
+                    }
+                    return DATOS;
+                })
+                .catch(function (err) {
+                    console.error('Error cargando datos:', err);
+                    DATOS.servicios = FALLBACK_SERVICIOS;
+                    DATOS.tecnicos  = FALLBACK_TECNICOS;
+                    return DATOS;
+                });
+        }
+
+        // Todas las categorías: las de la hoja "servicios" + las de la hoja "técnicos"
+        function construirCategorias() {
+            var lista = [];
+            DATOS.servicios.forEach(function (s) {
+                var t = String(s.titulo || '').trim();
+                if (t && lista.indexOf(t) === -1) lista.push(t);
+            });
+            DATOS.tecnicos.forEach(function (t) {
+                if (String(t.activo || 'SI').toUpperCase() !== 'SI') return;
+                var c = String(t.servicio || '').trim();
+                if (!c) return;
+                var existe = lista.some(function (l) { return normalizar(l) === normalizar(c); });
+                if (!existe) lista.push(c);
+            });
+            DATOS.categorias = lista;
+        }
+
+        // ====================================================================
+        // ============ BARRA LATERAL IZQUIERDA =============================
+        // ====================================================================
+        function renderRail() {
+            var cont = document.getElementById('rail-list');
+            cont.innerHTML = '';
+
+            if (!DATOS.categorias.length) {
+                cont.innerHTML = '<div class="rail-loading">No hay categorías disponibles</div>';
+                return;
             }
 
-            toggle.addEventListener('click', function () {
-                var isOpen = nav.classList.toggle('is-open');
-                toggle.setAttribute('aria-expanded', String(isOpen));
-                toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
-            });
+            DATOS.categorias.forEach(function (cat) {
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'rail-btn';
+                btn.setAttribute('data-categoria', cat);
 
-            nav.querySelectorAll('a').forEach(function (link) {
-                link.addEventListener('click', closeMenu);
+                var thumb = document.createElement('div');
+                thumb.className = 'rail-thumb';
+                var img = document.createElement('img');
+                img.alt = cat;
+                img.loading = 'lazy';
+                aplicarImagen(img, cat, function () {
+                    thumb.innerHTML = '<span>' + emojiDeCategoria(cat) + '</span>';
+                });
+                thumb.appendChild(img);
+
+                var label = document.createElement('span');
+                label.className = 'rail-label';
+                label.textContent = cat;
+
+                btn.appendChild(thumb);
+                btn.appendChild(label);
+
+                btn.addEventListener('click', function () {
+                    seleccionarCategoria(cat);
+                    cerrarRail();
+                    document.getElementById('solicitar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+
+                cont.appendChild(btn);
+            });
+        }
+
+        function marcarRail(categoria) {
+            document.querySelectorAll('#rail-list .rail-btn').forEach(function (b) {
+                b.classList.toggle('active', b.getAttribute('data-categoria') === categoria);
+            });
+        }
+
+        (function () {
+            var rail = document.getElementById('rail');
+            var backdrop = document.getElementById('rail-backdrop');
+            var toggle = document.getElementById('rail-toggle');
+
+            toggle.addEventListener('click', function () {
+                rail.classList.add('is-open');
+                backdrop.classList.add('is-open');
+            });
+            backdrop.addEventListener('click', cerrarRail);
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') cerrarRail(); });
+            rail.querySelectorAll('.rail-link').forEach(function (a) {
+                a.addEventListener('click', cerrarRail);
             });
         })();
 
-        // ====== Año dinámico en el footer ======
+        function cerrarRail() {
+            document.getElementById('rail').classList.remove('is-open');
+            document.getElementById('rail-backdrop').classList.remove('is-open');
+        }
+
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // ====== Utilidad para enviar datos a Google Sheets ======
+        // ====================================================================
+        // ============ ENVIAR A GOOGLE SHEETS ==============================
+        // ====================================================================
         function enviarAGSheet(datos, callback) {
             fetch(SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(datos).toString()
             })
-            .then(function () {
-                if (callback) callback(null, { result: 'success' });
-            })
+            .then(function () { if (callback) callback(null, { result: 'success' }); })
             .catch(function (error) {
                 console.error('Error al enviar a Google Sheets:', error);
                 if (callback) callback(error);
             });
         }
 
-        // ====== Formulario de contacto -> Google Sheets + WhatsApp ======
-        document.getElementById('contact-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            var nombre = document.getElementById('nombre').value.trim();
-            var telefono = document.getElementById('telefono').value.trim();
-            var servicio = document.getElementById('servicio').value;
-            var mensaje = document.getElementById('mensaje').value.trim();
-
-            var datos = {
-                tipo: 'contacto',
-                nombre: nombre,
-                telefono: telefono,
-                servicio: servicio,
-                mensaje: mensaje,
-                fecha: new Date().toISOString()
-            };
-
-            enviarAGSheet(datos, function (err) {
-                if (err) {
-                    console.warn('No se pudo guardar en Google Sheets, pero continuamos con WhatsApp');
-                }
-
-                var texto = 'Hola, soy ' + nombre + ' (Tel: ' + telefono + '). ' +
-                    'Necesito una cotización de: ' + servicio + '.' +
-                    (mensaje ? ' Detalle: ' + mensaje : '');
-
-                var url = 'https://wa.me/59170000000?text=' + encodeURIComponent(texto);
-                window.open(url, '_blank', 'noopener');
-            });
-        });
-
         // ====================================================================
-        // ====== CARGAR SERVICIOS Y TÉCNICOS DESDE GOOGLE SHEETS ===========
+        // ============ SERVICIOS ===========================================
         // ====================================================================
-        var DATOS_GSHEET = { servicios: [], tecnicos: [] };
-
-        function cargarDatosDesdeGSheet() {
-            return fetch(SCRIPT_URL)
-                .then(function (resp) { return resp.json(); })
-                .then(function (data) {
-                    if (data.result === 'success') {
-                        DATOS_GSHEET.servicios = data.servicios || [];
-                        DATOS_GSHEET.tecnicos = data.tecnicos || [];
-                    }
-                    return DATOS_GSHEET;
-                })
-                .catch(function (err) {
-                    console.error('Error cargando datos:', err);
-                    return DATOS_GSHEET;
-                });
-        }
-
-        // ====== Renderizar SERVICIOS ======
         function renderServicios() {
             var grid = document.getElementById('servicios-grid');
-            if (!grid) return;
-
             grid.innerHTML = '';
-            var servicios = DATOS_GSHEET.servicios;
 
-            if (!servicios || servicios.length === 0) {
-                grid.innerHTML =
-                    '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
-                        '<strong>No hay servicios cargados</strong>' +
-                        'Agrega servicios en tu hoja "Servicios".' +
-                    '</div>';
+            if (!DATOS.servicios.length) {
+                grid.innerHTML = '<div class="loading-text" style="grid-column: 1 / -1;">No hay servicios disponibles</div>';
                 return;
             }
 
-            servicios.forEach(function (s) {
-                var icono = s.icono || '🛠️';
+            DATOS.servicios.forEach(function (s) {
                 var titulo = s.titulo || 'Servicio';
-                var descripcion = (s.descripcion || '').toString().trim();
-                var items = (s.items || '').toString().split('|')
+                var descripcion = String(s.descripcion || '').trim();
+                var items = String(s.items || '').split('|')
                     .map(function (i) { return i.trim(); })
                     .filter(function (i) { return i !== ''; });
-                var boton = s.boton || ('Cotizar ' + titulo);
+                var boton = s.boton || ('Solicitar ' + titulo);
 
                 var card = document.createElement('div');
-                card.className = 'service-card';
+                card.className = 'service-card fade-in';
 
-                var itemsHTML = items.map(function (item) {
-                    return '<li>' + item + '</li>';
-                }).join('');
+                var imgBox = document.createElement('div');
+                imgBox.className = 'service-image';
+                var img = document.createElement('img');
+                img.alt = titulo;
+                img.loading = 'lazy';
+                aplicarImagen(img, titulo, function () {
+                    imgBox.innerHTML = '<div class="service-image-fallback">' + (s.icono || emojiDeCategoria(titulo)) + '</div>';
+                });
+                imgBox.appendChild(img);
 
-                card.innerHTML =
-                    '<div class="service-icon" aria-hidden="true">' + icono + '</div>' +
+                var body = document.createElement('div');
+                body.className = 'service-body';
+                body.innerHTML =
                     '<h3>' + titulo + '</h3>' +
                     (descripcion ? '<p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">' + descripcion + '</p>' : '') +
-                    '<ul class="service-list">' + itemsHTML + '</ul>' +
-                    '<a href="#contacto" class="btn-primary">' + boton + '</a>';
+                    '<ul class="service-list">' + items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul>' +
+                    '<button type="button" class="btn-primary">' + boton + '</button>';
 
+                body.querySelector('button').addEventListener('click', function () {
+                    seleccionarCategoria(titulo);
+                    document.getElementById('solicitar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                });
+
+                card.appendChild(imgBox);
+                card.appendChild(body);
                 grid.appendChild(card);
             });
         }
 
-        // ====== Buscar Técnico por Presupuesto ======
-        (function () {
-            var form = document.getElementById('filtro-form');
-            var wrapper = document.getElementById('resultados-wrapper');
-            var grid = document.getElementById('tecnicos-grid');
-            var titulo = document.getElementById('resultados-titulo');
-            var count = document.getElementById('resultados-count');
+        // ====================================================================
+        // ============ TÉCNICOS ============================================
+        // ====================================================================
+        function renderTecnicosPorCategoria() {
+            var tabs = document.getElementById('tecnicos-tabs');
+            var grid = document.getElementById('tecnicos-grid-cat');
 
-            function iniciales(nombre) {
-                return String(nombre).split(' ')
-                    .map(function (p) { return p[0]; })
-                    .slice(0, 2).join('').toUpperCase();
-            }
-
-            function crearTarjeta(tec) {
-                var card = document.createElement('div');
-                card.className = 'tecnico-card';
-
-                var mensaje = 'Hola ' + tec.nombre + ', te contacto desde Técnico SCZ. ' +
-                    'Necesito el servicio de ' + tec.servicio + ' y vi que aceptas trabajos desde Bs ' + tec.tarifaMin + '. ¿Podemos coordinar?';
-                var linkWa = 'https://wa.me/' + tec.telefono + '?text=' + encodeURIComponent(mensaje);
-
-                card.innerHTML =
-                    '<div class="tecnico-top">' +
-                        '<div class="tecnico-avatar">' + iniciales(tec.nombre) + '</div>' +
-                        '<div class="tecnico-info">' +
-                            '<h4>' + tec.nombre + '</h4>' +
-                            '<span class="tecnico-servicio-tag">' + tec.servicio + '</span>' +
-                        '</div>' +
-                    '</div>' +
-                    '<div class="tecnico-detalles">' +
-                        '<span>' + (tec.experiencia || '') + '</span>' +
-                    '</div>' +
-                    '<div class="tecnico-tarifa">Acepta trabajos desde <strong>Bs ' + tec.tarifaMin + '</strong></div>' +
-                    '<a href="' + linkWa + '" target="_blank" rel="noopener" class="btn-whatsapp">📱 Contactar por WhatsApp</a>';
-
-                return card;
-            }
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
-                var servicio = document.getElementById('filtro-servicio').value;
-                var monto = parseFloat(document.getElementById('filtro-monto').value);
-
-                wrapper.classList.remove('resultados-oculto');
-                grid.innerHTML = '<div class="sin-resultados" style="grid-column: 1 / -1;">Cargando técnicos...</div>';
-                titulo.textContent = 'Buscando...';
-                count.textContent = '';
-
-                // Asegurarnos de tener los técnicos cargados
-                var promesa = DATOS_GSHEET.tecnicos.length > 0
-                    ? Promise.resolve(DATOS_GSHEET)
-                    : cargarDatosDesdeGSheet();
-
-                promesa.then(function (data) {
-                    var tecnicos = (data.tecnicos || [])
-                        .filter(function (t) {
-                            return String(t.activo || 'SI').trim().toUpperCase() === 'SI';
-                        })
-                        .map(function (t) {
-                            return {
-                                nombre: String(t.nombre || '').trim(),
-                                servicio: String(t.servicio || '').trim(),
-                                tarifaMin: parseFloat(t.tarifamin) || 0,
-                                telefono: String(t.telefono || '').trim(),
-                                experiencia: String(t.experiencia || '').trim()
-                            };
-                        });
-
-                    var coincidencias = tecnicos
-                        .filter(function (t) { return t.servicio === servicio && t.tarifaMin <= monto; })
-                        .sort(function (a, b) { return b.tarifaMin - a.tarifaMin; });
-
-                    grid.innerHTML = '';
-                    titulo.textContent = 'Técnicos de ' + servicio + ' que aceptan Bs ' + monto;
-                    count.textContent = coincidencias.length + (coincidencias.length === 1 ? ' técnico' : ' técnicos');
-
-                    if (coincidencias.length === 0) {
-                        grid.innerHTML =
-                            '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
-                                '<strong>No encontramos técnicos para ese monto</strong>' +
-                                'Prueba con un monto un poco más alto o contáctanos directo por WhatsApp y te ayudamos a coordinar.' +
-                            '</div>';
-                    } else {
-                        coincidencias.forEach(function (tec) {
-                            grid.appendChild(crearTarjeta(tec));
-                        });
-                    }
-
-                    // Registrar la búsqueda en Google Sheets
-                    var datosBusqueda = {
-                        tipo: 'busqueda_tecnico',
-                        servicio: servicio,
-                        mensaje: 'Presupuesto: Bs ' + monto + ' | Resultados: ' + coincidencias.length,
-                        fecha: new Date().toISOString()
-                    };
-                    enviarAGSheet(datosBusqueda, function () {});
-
-                    wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }).catch(function (err) {
-                    console.error('Error cargando técnicos:', err);
-                    grid.innerHTML =
-                        '<div class="sin-resultados" style="grid-column: 1 / -1;">' +
-                            '<strong>Error al cargar los técnicos</strong>' +
-                            'Recarga la página o contáctanos directo por WhatsApp.' +
-                        '</div>';
-                    titulo.textContent = 'Error';
-                });
+            var categorias = [];
+            DATOS.tecnicos.forEach(function (t) {
+                if (String(t.activo || 'SI').toUpperCase() === 'SI') {
+                    var cat = String(t.servicio || '').trim();
+                    if (cat && categorias.indexOf(cat) === -1) categorias.push(cat);
+                }
             });
-        })();
 
-        // ====== Inicializar: cargar todo al abrir la página ======
-        cargarDatosDesdeGSheet().then(function () {
+            if (!categorias.length) {
+                tabs.innerHTML = '<div class="loading-text">No hay técnicos disponibles</div>';
+                grid.innerHTML = '';
+                return;
+            }
+
+            tabs.innerHTML = '';
+            categorias.forEach(function (cat, index) {
+                var btn = document.createElement('button');
+                btn.textContent = cat;
+                if (index === 0) btn.classList.add('active');
+                btn.addEventListener('click', function () {
+                    tabs.querySelectorAll('button').forEach(function (b) { b.classList.remove('active'); });
+                    btn.classList.add('active');
+                    mostrarTecnicosDeCategoria(cat);
+                });
+                tabs.appendChild(btn);
+            });
+
+            mostrarTecnicosDeCategoria(categorias[0]);
+        }
+
+        function mostrarTecnicosDeCategoria(categoria) {
+            var grid = document.getElementById('tecnicos-grid-cat');
+            grid.innerHTML = '';
+
+            var filtrados = DATOS.tecnicos.filter(function (t) {
+                return String(t.activo || 'SI').toUpperCase() === 'SI' &&
+                       normalizar(t.servicio) === normalizar(categoria);
+            });
+
+            if (!filtrados.length) {
+                grid.innerHTML = '<div class="loading-text" style="grid-column: 1 / -1;">No hay técnicos en esta categoría</div>';
+                return;
+            }
+            filtrados.forEach(function (t) { grid.appendChild(crearTarjetaTecnico(t)); });
+        }
+
+        function iniciales(nombre) {
+            return String(nombre).split(' ')
+                .map(function (p) { return p[0]; })
+                .slice(0, 2).join('').toUpperCase();
+        }
+
+        function crearTarjetaTecnico(tec) {
+            var nombre = String(tec.nombre || '').trim();
+            var servicio = String(tec.servicio || '').trim();
+            var tarifa = parseFloat(tec.tarifamin) || 0;
+            var experiencia = String(tec.experiencia || '').trim();
+
+            var card = document.createElement('div');
+            card.className = 'tecnico-card-cat fade-in';
+            card.innerHTML =
+                '<div class="tecnico-top-cat">' +
+                    '<div class="tecnico-avatar-cat">' + iniciales(nombre) + '</div>' +
+                    '<div class="tecnico-info-cat">' +
+                        '<h4>' + nombre + '</h4>' +
+                        '<span class="tecnico-servicio-tag-cat">' + servicio + '</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="tecnico-detalles-cat">' + (experiencia ? '<span>' + experiencia + '</span>' : '') + '</div>' +
+                '<div class="tecnico-tarifa-cat">Acepta trabajos desde <strong>Bs ' + tarifa + '</strong></div>' +
+                '<button type="button" class="btn-whatsapp">📝 Solicitar este técnico</button>';
+
+            card.querySelector('button').addEventListener('click', function () {
+                seleccionarCategoria(servicio);
+                var select = document.getElementById('sol-tecnico');
+                select.value = nombre;
+                actualizarPreviewTecnico();
+                document.getElementById('solicitar').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+
+            return card;
+        }
+
+        // ====================================================================
+        // ============ FORMULARIO ==========================================
+        // ====================================================================
+        function renderCategoriaChips() {
+            var cont = document.getElementById('categoria-chips');
+            cont.innerHTML = '';
+
+            if (!DATOS.categorias.length) {
+                cont.innerHTML = '<div class="loading-text">No hay categorías disponibles</div>';
+                return;
+            }
+
+            DATOS.categorias.forEach(function (cat) {
+                var chip = document.createElement('button');
+                chip.type = 'button';
+                chip.className = 'chip';
+                chip.setAttribute('data-categoria', cat);
+
+                var img = document.createElement('img');
+                img.alt = cat;
+                img.loading = 'lazy';
+                aplicarImagen(img, cat, function () { img.style.display = 'none'; });
+
+                var span = document.createElement('span');
+                span.textContent = cat;
+
+                chip.appendChild(img);
+                chip.appendChild(span);
+                chip.addEventListener('click', function () { seleccionarCategoria(cat); });
+                cont.appendChild(chip);
+            });
+        }
+
+        function seleccionarCategoria(categoria) {
+            DATOS.categoriaSeleccionada = categoria;
+
+            document.querySelectorAll('#categoria-chips .chip').forEach(function (c) {
+                c.classList.toggle('active', normalizar(c.getAttribute('data-categoria')) === normalizar(categoria));
+            });
+            marcarRail(categoria);
+
+            var servicio = DATOS.servicios.find(function (s) {
+                return normalizar(s.titulo) === normalizar(categoria);
+            });
+
+            var itemsCont = document.getElementById('items-container');
+            var itemsGroup = document.getElementById('items-group');
+            itemsGroup.style.display = 'block';
+            itemsCont.innerHTML = '';
+
+            if (servicio && servicio.items) {
+                String(servicio.items).split('|')
+                    .map(function (i) { return i.trim(); })
+                    .filter(function (i) { return i !== ''; })
+                    .forEach(function (item) {
+                        var label = document.createElement('label');
+                        label.className = 'item-checkbox';
+                        label.innerHTML =
+                            '<input type="checkbox" value="' + item.replace(/"/g, '&quot;') + '">' +
+                            '<span>' + item + '</span>';
+                        itemsCont.appendChild(label);
+                    });
+            } else {
+                itemsCont.innerHTML = '<div class="items-placeholder">Describe el trabajo en el campo de abajo</div>';
+            }
+
+            var labelOtro = document.createElement('label');
+            labelOtro.className = 'item-checkbox';
+            labelOtro.innerHTML =
+                '<input type="checkbox" id="check-otro" value="__OTRO__">' +
+                '<span>Otro (especificar abajo)</span>';
+            itemsCont.appendChild(labelOtro);
+
+            var checkOtro = labelOtro.querySelector('#check-otro');
+            var otroGroup = document.getElementById('otro-group');
+            otroGroup.classList.remove('visible');
+            checkOtro.addEventListener('change', function () {
+                otroGroup.classList.toggle('visible', checkOtro.checked);
+            });
+
+            actualizarSelectTecnicos(categoria);
+        }
+
+        function actualizarSelectTecnicos(categoria) {
+            var select = document.getElementById('sol-tecnico');
+            select.innerHTML = '<option value="Cualquiera disponible">Cualquiera disponible</option>';
+
+            DATOS.tecnicos.filter(function (t) {
+                return String(t.activo || 'SI').toUpperCase() === 'SI' &&
+                       normalizar(t.servicio) === normalizar(categoria);
+            }).forEach(function (t) {
+                var opt = document.createElement('option');
+                opt.value = String(t.nombre).trim();
+                opt.textContent = String(t.nombre).trim() + ' (desde Bs ' + (parseFloat(t.tarifamin) || 0) + ')';
+                opt.setAttribute('data-tarifa', parseFloat(t.tarifamin) || 0);
+                opt.setAttribute('data-experiencia', String(t.experiencia || '').trim());
+                select.appendChild(opt);
+            });
+
+            actualizarPreviewTecnico();
+        }
+
+        function actualizarPreviewTecnico() {
+            var select = document.getElementById('sol-tecnico');
+            var preview = document.getElementById('tecnico-preview');
+            var opt = select.options[select.selectedIndex];
+
+            if (opt && opt.value && opt.value !== 'Cualquiera disponible') {
+                var tarifa = opt.getAttribute('data-tarifa');
+                var exp = opt.getAttribute('data-experiencia');
+                preview.innerHTML =
+                    '<strong>' + opt.value + '</strong>' +
+                    (exp ? '<br>📌 ' + exp : '') +
+                    (tarifa ? '<br>💰 Tarifa mínima: Bs ' + tarifa : '');
+                preview.classList.add('visible');
+            } else {
+                preview.classList.remove('visible');
+            }
+        }
+
+        document.getElementById('sol-tecnico').addEventListener('change', actualizarPreviewTecnico);
+
+        // ====================================================================
+        // ============ ENVÍO DEL FORMULARIO ================================
+        // ====================================================================
+        document.getElementById('solicitud-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            if (!DATOS.categoriaSeleccionada) {
+                alert('Elige un servicio para continuar.');
+                return;
+            }
+
+            var nombre = document.getElementById('sol-nombre').value.trim();
+            var telefono = document.getElementById('sol-telefono').value.trim();
+            var tecnico = document.getElementById('sol-tecnico').value;
+            var monto = parseFloat(document.getElementById('sol-monto').value) || 0;
+            var otroTexto = document.getElementById('sol-otro').value.trim();
+
+            var itemsMarcados = [];
+            document.querySelectorAll('#items-container input[type="checkbox"]:checked').forEach(function (chk) {
+                if (chk.value !== '__OTRO__') itemsMarcados.push(chk.value);
+            });
+
+            if (!itemsMarcados.length && !otroTexto) {
+                alert('Marca al menos un trabajo o descríbelo en "Otro".');
+                return;
+            }
+
+            var descripcion = itemsMarcados.join(' • ');
+            if (otroTexto) descripcion += (descripcion ? ' • ' : '') + 'Otro: ' + otroTexto;
+
+            var ahora = new Date();
+            var fechaStr = ahora.toLocaleDateString('es-BO') + ' ' +
+                           ahora.toLocaleTimeString('es-BO', { hour: '2-digit', minute: '2-digit' });
+
+            var datosGS = {
+                tipo: 'solicitud_servicio',
+                nombre: nombre,
+                telefono: telefono,
+                servicio: DATOS.categoriaSeleccionada,
+                tecnico: tecnico,
+                descripcion: descripcion,
+                monto: monto
+            };
+
+            var btn = document.getElementById('sol-submit');
+            btn.disabled = true;
+            btn.textContent = '⏳ Enviando...';
+
+            enviarAGSheet(datosGS, function () {
+                var lineas = [
+                    '🛠️ *NUEVA SOLICITUD DE SERVICIO*', '',
+                    '👤 *Nombre:* ' + nombre,
+                    '📱 *Teléfono:* ' + telefono,
+                    '🔧 *Servicio:* ' + DATOS.categoriaSeleccionada, '',
+                    '📋 *Trabajos solicitados:*'
+                ];
+                itemsMarcados.forEach(function (item) { lineas.push('  • ' + item); });
+                if (otroTexto) lineas.push('  • Otro: ' + otroTexto);
+                lineas.push('');
+                lineas.push('👨‍🔧 *Técnico preferido:* ' + tecnico);
+                lineas.push('💰 *Monto dispuesto a pagar:* Bs ' + monto);
+                lineas.push('📅 *Fecha:* ' + fechaStr);
+
+                var url = 'https://wa.me/' + WHATSAPP_DUENO + '?text=' + encodeURIComponent(lineas.join('\n'));
+                window.open(url, '_blank', 'noopener');
+
+                setTimeout(function () {
+                    btn.disabled = false;
+                    btn.textContent = '📱 Enviar solicitud por WhatsApp';
+                    alert('✅ Solicitud enviada. Te contactamos en breve.');
+                }, 500);
+            });
+        });
+
+        // ====================================================================
+        // ============ INICIO ==============================================
+        // ====================================================================
+        cargarHero();
+        cargarDatos().then(function () {
+            construirCategorias();
+            renderRail();
             renderServicios();
+            renderTecnicosPorCategoria();
+            renderCategoriaChips();
         });
     </script>
 
