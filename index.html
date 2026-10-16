@@ -569,7 +569,18 @@
                                 <input type="tel" id="sol-telefono" name="telefono" placeholder="Ej: 70012345" pattern="[0-9]{7,8}" required>
                             </div>
                         </div>
-
+                        <!-- NUEVOS CAMPOS: Correo y Dirección -->
+<div class="form-row">
+    <div class="form-group">
+        <label for="sol-correo">Correo electrónico</label>
+        <input type="email" id="sol-correo" name="correo" placeholder="Ej: cliente@correo.com">
+    </div>
+    <div class="form-group">
+        <label for="sol-direccion">Dirección del servicio</label>
+        <input type="text" id="sol-direccion" name="direccion" placeholder="Ej: Av. Muro #123, Barrio Centro">
+    </div>
+</div>
+                          
                         <div class="form-group">
                             <label>¿Qué servicios necesitas? * <span style="color: var(--text-muted); font-weight: 400;">(puedes marcar más de uno)</span></label>
                             <div class="categoria-multi" id="categoria-multi">
@@ -1307,6 +1318,8 @@
 
             var nombre = document.getElementById('sol-nombre').value.trim();
             var telefono = document.getElementById('sol-telefono').value.trim();
+            var correo = document.getElementById('sol-correo').value.trim();
+            var direccion = document.getElementById('sol-direccion').value.trim();
             var tecnico = document.getElementById('sol-tecnico').value;
             var monto = parseFloat(document.getElementById('sol-monto').value) || 0;
             var otroTexto = document.getElementById('sol-otro').value.trim();
@@ -1334,6 +1347,8 @@
                 tipo: 'solicitud_servicio',
                 nombre: nombre,
                 telefono: telefono,
+                correo: correo,
+                direccion: direccion,
                 servicio: serviciosTexto,
                 tecnico: tecnico,
                 descripcion: descripcion,
@@ -1349,6 +1364,8 @@
                     '🛠️ *NUEVA SOLICITUD DE SERVICIO*', '',
                     '👤 *Nombre:* ' + nombre,
                     '📱 *Teléfono:* ' + telefono,
+                    correo ? '📧 *Correo:* ' + correo : '',
+                    direccion ? '📍 *Dirección:* ' + direccion : '',
                     '🔧 *Servicios:* ' + serviciosTexto, '',
                     '📋 *Trabajos solicitados:*'
                 ];
@@ -1358,7 +1375,9 @@
                 lineas.push('👨‍🔧 *Técnico preferido:* ' + tecnico);
                 lineas.push('💰 *Monto dispuesto a pagar:* Bs ' + monto);
                 lineas.push('📅 *Fecha:* ' + fechaStr);
-
+                
+                lineas = lineas.filter(function(l) { return l !== ''; });
+                
                 var url = 'https://wa.me/' + WHATSAPP_DUENO + '?text=' + encodeURIComponent(lineas.join('\n'));
                 window.open(url, '_blank', 'noopener');
 
