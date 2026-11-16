@@ -613,7 +613,10 @@
                                 <input type="number" id="sol-monto" name="monto" placeholder="Ej: 200" min="1" required>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="sol-comentarios">Comentarios adicionales <span style="color: var(--text-muted); font-weight: 400;">(opcional)</span></label>
+                            <textarea id="sol-comentarios" name="comentarios" rows="3" placeholder="Ej: Horario preferido, referencias para llegar, detalles del problema..."></textarea>
+                        </div>
                         <button type="submit" class="btn-whatsapp submit-btn" id="sol-submit">
                             📱 Enviar solicitud por WhatsApp
                         </button>
@@ -1322,6 +1325,7 @@
             var direccion = document.getElementById('sol-direccion').value.trim();
             var tecnico = document.getElementById('sol-tecnico').value;
             var monto = parseFloat(document.getElementById('sol-monto').value) || 0;
+            var comentarios = document.getElementById('sol-comentarios').value.trim();
             var otroTexto = document.getElementById('sol-otro').value.trim();
 
             var itemsMarcados = [];
@@ -1352,7 +1356,8 @@
                 servicio: serviciosTexto,
                 tecnico: tecnico,
                 descripcion: descripcion,
-                monto: monto
+                monto: monto,
+                comentarios: comentarios
             };
 
             var btn = document.getElementById('sol-submit');
@@ -1374,6 +1379,7 @@
                 lineas.push('');
                 lineas.push('👨‍🔧 *Técnico preferido:* ' + tecnico);
                 lineas.push('💰 *Monto dispuesto a pagar:* Bs ' + monto);
+                if (comentarios) lineas.push('💬 *Comentarios:* ' + comentarios);
                 lineas.push('📅 *Fecha:* ' + fechaStr);
                 
                 lineas = lineas.filter(function(l) { return l !== ''; });
