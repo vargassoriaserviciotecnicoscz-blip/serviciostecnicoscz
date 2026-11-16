@@ -605,7 +605,14 @@
                             </select>
                             <div class="tecnico-info-preview" id="tecnico-preview"></div>
                         </div>
-
+                            <div class="form-group">
+                            <label for="sol-horario">Horario disponible del técnico *</label>
+                            <select id="sol-horario" name="horario" required>
+                                <option value="Mañana (08:00 - 12:00)">🌅 Mañana (08:00 - 12:00)</option>
+                                <option value="Tarde (14:00 - 18:00)">☀️ Tarde (14:00 - 18:00)</option>
+                                <option value="Noche (19:00 - 21:00)">🌙 Noche (19:00 - 21:00)</option>
+                            </select>
+                        </div>
                         <div class="form-group">
                             <label for="sol-monto">Monto dispuesto a pagar (Bs) *</label>
                             <div class="monto-wrapper">
@@ -1281,16 +1288,35 @@
                 opt.textContent = String(t.nombre).trim() + ' (desde Bs ' + (parseFloat(t.tarifamin) || 0) + ')';
                 opt.setAttribute('data-tarifa', parseFloat(t.tarifamin) || 0);
                 opt.setAttribute('data-experiencia', String(t.experiencia || '').trim());
+                opt.setAttribute('data-horarios', String(t.horarios || 'Mañana (08:00 - 12:00)|Tarde (14:00 - 18:00)|Noche (19:00 - 21:00)').trim());
                 select.appendChild(opt);
             });
 
             actualizarPreviewTecnico();
         }
 
-        function actualizarPreviewTecnico() {
+       function actualizarPreviewTecnico() {
             var select = document.getElementById('sol-tecnico');
+            var selectHorario = document.getElementById('sol-horario');
             var preview = document.getElementById('tecnico-preview');
             var opt = select.options[select.selectedIndex];
+
+            var horariosStr = (opt && opt.value && opt.value !== 'Cualquiera disponible')
+                ? opt.getAttribute('data-horarios')
+                : 'Mañana (08:00 - 12:00)|Tarde (14:00 - 18:00)|Noche (19:00 - 21:00)';
+
+            var listaHorarios = String(horariosStr || '')
+                .split('|')
+                .map(function (h) { return h.trim(); })
+                .filter(Boolean);
+
+            selectHorario.innerHTML = '';
+            listaHorarios.forEach(function (h) {
+                var opH = document.createElement('option');
+                opH.value = h;
+                opH.textContent = '🕒 ' + h;
+                selectHorario.appendChild(opH);
+            });
 
             if (opt && opt.value && opt.value !== 'Cualquiera disponible') {
                 var tarifa = opt.getAttribute('data-tarifa');
@@ -1298,7 +1324,8 @@
                 preview.innerHTML =
                     '<strong>' + opt.value + '</strong>' +
                     (exp ? '<br>📌 ' + exp : '') +
-                    (tarifa ? '<br>💰 Tarifa mínima: Bs ' + tarifa : '');
+                    (tarifa ? '<br>💰 Tarifa mínima: Bs ' + tarifa : '') +
+                    '<br>🕒 Turnos disponibles: ' + listaHorarios.join(' · ');
                 preview.classList.add('visible');
             } else {
                 preview.classList.remove('visible');
@@ -1326,6 +1353,7 @@
             var tecnico = document.getElementById('sol-tecnico').value;
             var monto = parseFloat(document.getElementById('sol-monto').value) || 0;
             var comentarios = document.getElementById('sol-comentarios').value.trim();
+            var horario = document.getElementById('sol-horario').value;
             var otroTexto = document.getElementById('sol-otro').value.trim();
 
             var itemsMarcados = [];
@@ -1357,7 +1385,8 @@
                 tecnico: tecnico,
                 descripcion: descripcion,
                 monto: monto,
-                comentarios: comentarios
+                comentarios: comentarios,
+                horario: horario
             };
 
             var btn = document.getElementById('sol-submit');
@@ -1380,6 +1409,7 @@
                 lineas.push('👨‍🔧 *Técnico preferido:* ' + tecnico);
                 lineas.push('💰 *Monto dispuesto a pagar:* Bs ' + monto);
                 if (comentarios) lineas.push('💬 *Comentarios:* ' + comentarios);
+               lineas.push('🕒 *Horario preferido:* ' + horario); 
                 lineas.push('📅 *Fecha:* ' + fechaStr);
                 
                 lineas = lineas.filter(function(l) { return l !== ''; });
