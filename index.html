@@ -605,6 +605,10 @@
                             </select>
                             <div class="tecnico-info-preview" id="tecnico-preview"></div>
                         </div>
+                        <div class="form-group">
+                            <label for="sol-fecha">Fecha preferida de visita *</label>
+                            <input type="date" id="sol-fecha" name="fechavisita" style="color-scheme: dark;" required>
+                        </div>
                             <div class="form-group">
                             <label for="sol-horario">Horario disponible del técnico *</label>
                             <select id="sol-horario" name="horario" required>
@@ -1354,6 +1358,8 @@
             var monto = parseFloat(document.getElementById('sol-monto').value) || 0;
             var comentarios = document.getElementById('sol-comentarios').value.trim();
             var horario = document.getElementById('sol-horario').value;
+            var fechaVisitaRaw = document.getElementById('sol-fecha').value;
+            var fechaVisita = fechaVisitaRaw ? fechaVisitaRaw.split('-').reverse().join('/') : 'A coordinar';
             var otroTexto = document.getElementById('sol-otro').value.trim();
 
             var itemsMarcados = [];
@@ -1386,7 +1392,8 @@
                 descripcion: descripcion,
                 monto: monto,
                 comentarios: comentarios,
-                horario: horario
+                horario: horario,
+                fechaVisita: fechaVisita
             };
 
             var btn = document.getElementById('sol-submit');
@@ -1409,6 +1416,7 @@
                 lineas.push('👨‍🔧 *Técnico preferido:* ' + tecnico);
                 lineas.push('💰 *Monto dispuesto a pagar:* Bs ' + monto);
                 if (comentarios) lineas.push('💬 *Comentarios:* ' + comentarios);
+                lineas.push('📆 *Fecha de visita:* ' + fechaVisita);
                lineas.push('🕒 *Horario preferido:* ' + horario); 
                 lineas.push('📅 *Fecha:* ' + fechaStr);
                 
@@ -1428,6 +1436,15 @@
         // ====================================================================
         // ============ INICIO ==============================================
         // ====================================================================
+        var inputFecha = document.getElementById('sol-fecha');
+     if (inputFecha) {
+         var hoy = new Date();
+         var hoyLocal = hoy.getFullYear() + '-' +
+             String(hoy.getMonth() + 1).padStart(2, '0') + '-' +
+             String(hoy.getDate()).padStart(2, '0');
+         inputFecha.min = hoyLocal;
+         inputFecha.value = hoyLocal;
+     }
         cargarHero();
         cargarDatos().then(function () {
             construirCategorias();
